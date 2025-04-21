@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+    --default-font-family: "Manrope", sans-serif;
+    --terracotta: #D94F00;
+    --teal: #0A5C5C;
+    --mustard: #F4A261;
+    --techBlue: #1A73E8;
+    --cream: #F5E8C7;
+    --charcoal: #2B2D42;
+}
