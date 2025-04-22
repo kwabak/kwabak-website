@@ -9,10 +9,11 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import Careers from "./components/Careers";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import CreativeExpression from "./components/CreativeExpression";
 
 const App = () => {
   return (
-    <main className="overflow-x-hidden bg-[#332a5d]">
+    <main className="overflow-x-hidden bg-[#F2E5D3]">
       <Navbar />
       <HeroSection />
       <WhyAfrica />
@@ -20,6 +21,7 @@ const App = () => {
       <OurProcess />
       <VisionAndValues />
       <WhyChooseUs />
+      <CreativeExpression />
       <MeetTheTeam />
       <Careers />
       <ContactSection />

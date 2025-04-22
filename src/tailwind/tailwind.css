@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-    --default-font-family: "Manrope", sans-serif;
+    --default-font-family: "Quicksand", sans-serif;
     --terracotta: #D94F00;
     --teal: #0A5C5C;
     --mustard: #F4A261;

@@ -12,40 +12,44 @@ const steps = [
   {
     title: "Discover",
     description: "We dive deep into your goals, pain points, and vision to shape impactful strategies.",
-    icon: <FaLightbulb className="text-[#fd6c63] text-3xl" />,
+    icon: <FaLightbulb className="text-[#E86C4F] text-3xl" />,
   },
   {
     title: "Design",
     description: "Crafting bold and user-centric experiences that connect with your audience.",
-    icon: <FaUsers className="text-[#00ffff] text-3xl" />,
+    icon: <FaUsers className="text-[#027A76] text-3xl" />,
   },
   {
     title: "Develop",
     description: "Building robust and scalable solutions with modern, flexible technologies.",
-    icon: <FaCogs className="text-[#fd6c63] text-3xl" />,
+    icon: <FaCogs className="text-[#E86C4F] text-3xl" />,
   },
   {
     title: "Deploy",
     description: "From launch to growth, we ensure success and long-term sustainability.",
-    icon: <FaRocket className="text-[#00ffff] text-3xl" />,
+    icon: <FaRocket className="text-[#027A76] text-3xl" />,
   },
 ];
 
 const OurProcess = () => {
   useEffect(() => {
-    const steps = gsap.utils.toArray(".process-card");
-    steps.forEach((card, i) => {
+    gsap.registerPlugin(ScrollTrigger);
+    const cards = gsap.utils.toArray(".process-card");
+
+    cards.forEach((card, i) => {
       gsap.fromTo(
         card,
-        { opacity: 0, y: 50 },
+        { opacity: 0, y: 60 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          ease: "power2.out",
+          duration: 1,
+          delay: i * 0.2,
+          ease: "power3.out",
           scrollTrigger: {
             trigger: card,
             start: "top 90%",
+            toggleActions: "play none none reverse",
           },
         }
       );
@@ -53,9 +57,9 @@ const OurProcess = () => {
   }, []);
 
   return (
-    <section className="relative bg-[#1d1d30] text-white py-24 px-6 md:px-20 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-[#F2E5D3] via-[#DBAE8D] to-[#BFDDCE] text-[#1d1d1d] py-24 px-6 md:px-20 overflow-hidden">
       {/* Decorative Glowing Rings */}
-      <div className="absolute -top-32 left-1/2 transform -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-br from-[#fd6c63]/30 to-[#00ffff]/30 rounded-full blur-[200px] opacity-50 animate-pulse z-0"></div>
+      <div className="absolute -top-32 left-1/2 transform -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-br from-[#E86C4F]/30 to-[#027A76]/30 rounded-full blur-[200px] opacity-50 animate-pulse z-0"></div>
 
       <motion.div
         className="max-w-6xl mx-auto text-center mb-16 relative z-10"
@@ -65,9 +69,9 @@ const OurProcess = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-3xl md:text-5xl font-bold">
-          Our <span className="text-[#fd6c63]">Process</span>
+          Our <span className="text-[#E86C4F]">Process</span>
         </h2>
-        <p className="text-white/80 mt-4 max-w-2xl mx-auto">
+        <p className="text-[#1d1d1d]/80 mt-4 max-w-2xl mx-auto">
           From idea to impact, our structured process helps African SMEs innovate and grow.
         </p>
       </motion.div>
@@ -76,18 +80,18 @@ const OurProcess = () => {
         {steps.map((step, index) => (
           <div
             key={index}
-            className="process-card bg-white/5 p-8 rounded-3xl text-center backdrop-blur-md border border-white/10 hover:shadow-[0_0_25px_rgba(255,255,255,0.1)] transition-all hover:scale-105"
+            className="process-card bg-white/60 p-8 rounded-3xl text-center backdrop-blur-lg border border-white/20 hover:shadow-xl transition-all hover:scale-105"
           >
             <div className="mb-4 flex justify-center">{step.icon}</div>
-            <h3 className="text-xl font-semibold text-[#fd6c63] mb-2">{step.title}</h3>
-            <p className="text-white/80 text-sm">{step.description}</p>
+            <h3 className="text-xl font-semibold text-[#E86C4F] mb-2">{step.title}</h3>
+            <p className="text-[#1d1d1d]/80 text-sm">{step.description}</p>
           </div>
         ))}
       </div>
 
       {/* Glowing background blobs */}
-      <div className="absolute top-0 left-0 w-80 h-80 bg-[#fd6c63]/10 blur-[120px] rounded-full -z-10"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#00ffff]/10 blur-[120px] rounded-full -z-10"></div>
+      <div className="absolute top-0 left-0 w-80 h-80 bg-[#E86C4F]/10 blur-[120px] rounded-full -z-10"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#027A76]/10 blur-[120px] rounded-full -z-10"></div>
     </section>
   );
 };
