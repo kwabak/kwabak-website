@@ -96,10 +96,10 @@ const CreativeExpression = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#E86C4F] to-[#F4A24C] animate-glitch mb-6">
-            Our Creative Expression
+          <h2 className="text-4xl md:text-6xl font-extrabold bg-clip-text text-[#1d1d1d] animate-glitch mb-6">
+            Our Creative <span className="text-[#027A76]">Expression</span>
           </h2>
-          <p className="text-lg md:text-xl text-[#1d1d1d]/80 max-w-4xl mx-auto font-light">
+          <p className="text-lg md:text-xl text-[#1d1d1d]/80 max-w-4xl mx-auto">
             Kwabak's visual identity blends cultural heritage with innovation. Our logo fuses Ghanaian Adinkra symbols—UAC Nkanea and Nkyinkyim—embodying technological progress and adaptive resilience.
           </p>
         </motion.div>
@@ -130,7 +130,7 @@ const CreativeExpression = () => {
           ].map((item, index) => (
             <Tilt key={index} options={{ max: 15, scale: 1.05, speed: 400 }}>
               <motion.div
-                className="bg-white/20 backdrop-blur-2xl p-6 rounded-2xl shadow-glow border-gradient-to-r from-[#E86C4F]/30 to-[#F4A24C]/30"
+                className="bg-white/20 backdrop-blur-2xl p-6 rounded-2xl border-4 border-[#E86C4F]/20"
                 variants={cardVariants}
                 initial="initial"
                 animate="animate"

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCode, FaBrain, FaChartBar, FaPalette, FaHandsHelping } from "react-icons/fa";
+import { FaCode, FaMicrochip , FaChartBar, FaPalette, FaHandsHelping } from "react-icons/fa";
 
 const services = [
   {
@@ -11,7 +11,7 @@ const services = [
   {
     title: "AI Solutions",
     description: "Leverage artificial intelligence to automate, predict, and grow smarter.",
-    icon: <FaBrain className="text-4xl text-[#027A76]" />,
+    icon: <FaMicrochip className="text-4xl text-[#027A76]" />,
   },
   {
     title: "Data Intelligence",
