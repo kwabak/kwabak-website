@@ -1,7 +1,7 @@
-import React from "react";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Globe, Award, Lightbulb, Leaf } from "lucide-react";
+import { Award, Globe, Lightbulb } from "lucide-react";
+import React, { useRef } from "react";
+import Icon from "../assets/Icon.png";
 
 const WhyChooseUs = () => {
   const ref = useRef(null);
@@ -70,7 +70,13 @@ const WhyChooseUs = () => {
           </div>
 
           <div className="flex items-start gap-4">
-            <Leaf className="text-green-500 w-8 h-8 shrink-0" />
+          <img src={Icon} alt="Sustainable Growth Logo" className="w-8 h-8 shrink-0" />
+          {/* <img 
+            src="/assets/Icon.png" 
+            alt="Sustainable Growth Logo" 
+            className="w-8 h-8 shrink-0" 
+          /> */}
+            {/* <Leaf className="text-green-500 w-8 h-8 shrink-0" /> */}
             <div>
               <h3 className="text-2xl font-semibold mb-1">Sustainable Growth</h3>
               <p className="text-[#1d1d1d]/80">
