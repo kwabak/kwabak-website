@@ -92,7 +92,7 @@ const Navbar = ({ scrollToSection }) => {
             <button
               key={index}
               onClick={() => scrollToSection(link)}
-              className="text-[#1d1d1d] font-medium hover:text-[#E86C4F] transition-colors duration-200"
+              className="text-[#1d1d1d] cursor-pointer font-medium hover:text-[#E86C4F] transition-colors duration-200"
             >
               {link}
             </button>
@@ -125,7 +125,7 @@ const Navbar = ({ scrollToSection }) => {
                   scrollToSection(link);
                   setIsOpen(false);
                 }}
-                className="block text-[#1d1d1d] text-lg font-semibold hover:text-[#E86C4F] transition duration-300"
+                className="block text-[#1d1d1d] text-lg font-semibold hover:text-[#E86C4F] cursor-pointer  transition duration-300"
               >
                 {link}
               </button>
