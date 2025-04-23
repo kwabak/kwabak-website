@@ -69,29 +69,10 @@ const glassCards = [
 
 const HeroSection = () => {
   return (
-    <section className="relative mt-[2rem] h-screen w-full bg-[#F2E5D3] text-white overflow-hidden">
-      {/* Particle Background */}
-      <Particles
-        id="tsparticles"
-        options={{
-          particles: {
-            number: { value: 50, density: { enable: true, value_area: 800 } },
-            shape: { type: "circle" },
-            opacity: { value: 0.4, random: true },
-            size: { value: 3, random: true },
-            move: { enable: true, speed: 1 },
-          },
-          interactivity: {
-            events: {
-              onhover: { enable: true, mode: "repulse" }
-            }
-          }
-        }}
-        className="absolute inset-0 z-0"
-      />
-
+    <section className="relative  pt-[20rem] md:pt-[2rem] h-screen w-full bg-[#F2E5D3] text-white ">
+      
       {/* Main Content */}
-      <div className="relative z-10 h-full flex flex-col md:flex-row items-center justify-center px-6 md:px-20 text-center md:text-left space-y-8 md:space-y-0 md:space-x-12">
+      <div className="relative z-40 h-full flex flex-col md:flex-row items-center justify-center px-6 md:px-20 text-center md:text-left">
         {/* Text Section */}
         <motion.div
           className="max-w-xl"
@@ -128,10 +109,10 @@ const HeroSection = () => {
               {glassCards.map((card, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0, scale: [1, 1.1, 1] }}
-                  transition={{ delay: 0.5 + i * 0.15, duration: 1.2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-                  className={`absolute z-40 backdrop-blur-xl bg-white/30 text-[#1d1d1d] px-4 py-2 rounded-xl shadow-lg flex items-center gap-2 text-sm font-medium ${card.style}`}
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ delay: 0.5 + i * 0.15, duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                  className={`absolute z-40 backdrop-blur-xl bg-white/30 text-[#1d1d1d] px-4 py-2 rounded-xl shadow-lg flex items-center gap-2 text-sm font-medium ${card.style} ${(i < 4 ? "flex" : "hidden") + " sm:flex"}`}
+                  whileHover={{ scale: 1.1, rotate: 0 }}
                 >
                   {card.icon}
                   <span>{card.text}</span>

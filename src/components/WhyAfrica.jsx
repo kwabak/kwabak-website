@@ -57,7 +57,7 @@ const WhyAfrica = () => {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-b from-[#F2E5D3] via-[#DBAE8D] to-[#BFDDCE] text-white px-6 md:px-20 py-[5rem] mt-4 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-[#F2E5D3] via-[#DBAE8D] to-[#BFDDCE] text-white px-6 md:px-20 py-[5rem] mt-[10rem] md:mt-0 overflow-hidden">
       <style>
         {`
           @keyframes glitch {

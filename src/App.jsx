@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import WhyAfrica from "./components/WhyAfrica";
@@ -12,6 +14,15 @@ import Footer from "./components/Footer";
 import CreativeExpression from "./components/CreativeExpression";
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 3000); // 3 seconds
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) return <Loader />;
+
   return (
     <main className="overflow-x-hidden bg-[#F2E5D3]">
       <Navbar />
@@ -28,6 +39,6 @@ const App = () => {
       <Footer />
     </main>
   );
-}
+};
 
 export default App;

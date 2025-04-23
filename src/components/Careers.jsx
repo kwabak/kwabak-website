@@ -83,11 +83,11 @@ const Careers = () => {
           <div className="w-full h-full flex items-center justify-center">
             <BriefcaseBusiness className="w-[280px] h-[280px] text-[#027A76]/30 blur-sm animate-pulse" />
           </div>
-          <div className="absolute top-8 left-8 bg-[#027A76]/10 backdrop-blur-md p-6 rounded-2xl shadow-lg text-center max-w-xs info-block">
+          <div className="absolute top-8 left-8 bg-[#fff]/10 backdrop-blur-md p-6 rounded-2xl shadow-lg text-center max-w-xs info-block">
             <p className="text-xl font-bold text-[#027A76] mb-1">Impact-Focused</p>
             <p className="text-[#1d1d1d]/70 text-sm">From ideation to execution, your work matters every day.</p>
           </div>
-          <div className="absolute bottom-6 right-6 bg-[#E86C4F]/10 backdrop-blur-md p-6 rounded-2xl shadow-lg text-center max-w-xs info-block">
+          <div className="absolute bottom-6 right-6 bg-[#fff]/10 backdrop-blur-md p-6 rounded-2xl shadow-lg text-center max-w-xs info-block">
             <p className="text-xl font-bold text-[#E86C4F] mb-1">Global Culture</p>
             <p className="text-[#1d1d1d]/70 text-sm">Collaborate across borders with a team that spans the globe.</p>
           </div>

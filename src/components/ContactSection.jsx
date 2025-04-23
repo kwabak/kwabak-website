@@ -45,7 +45,7 @@ const ContactSection = () => {
             </p>
           </div>
           {/* Contact Button */}
-          <button className="contact-button inline-block mt-6 px-6 py-3 bg-[#E86C4F] hover:bg-[#d8563f] text-white font-medium rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+          <button className="contact-button inline-block mt-6 px-6 py-3 bg-[#E86C4F] hover:bg-[#d8563f] text-white font-medium rounded-full shadow-lg transition duration-300 transform hover:scale-105 cursor-pointer">
             Share Your Thoughts
           </button>
         </div>
@@ -58,9 +58,14 @@ const ContactSection = () => {
               placeholder="Your name"
               className="w-full p-3 rounded-lg border border-[#DBAE8D] text-[#1d1d1d] placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-[#E86C4F]"
             />
+            <input
+              type="email"
+              placeholder="example@gmail.com"
+              className="w-full p-3 rounded-lg border border-[#DBAE8D] text-[#1d1d1d] placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-[#E86C4F]"
+            />
 
             <div className="flex gap-4">
-              <select className="w-1/3 p-3 rounded-lg border border-[#DBAE8D] bg-white text-[#1d1d1d] focus:outline-none focus:ring-2 focus:ring-[#E86C4F]">
+              <select className="w-1/3 p-3 rounded-lg border border-[#DBAE8D] text-[#1d1d1d] focus:outline-none focus:ring-2 focus:ring-[#E86C4F]">
                 <option value="+233">🇬🇭 +233</option>
                 <option value="+234">🇳🇬 +234</option>
                 <option value="+254">🇰🇪 +254</option>
@@ -81,7 +86,7 @@ const ContactSection = () => {
             />
             <button
               type="submit"
-              className="w-full py-3 bg-[#E86C4F] hover:bg-[#d8563f] text-white font-medium rounded-lg shadow-lg transform hover:scale-105 transition duration-300"
+              className="w-full py-3 bg-[#E86C4F] hover:bg-[#d8563f] text-white font-medium cursor-pointer rounded-lg shadow-lg transform hover:scale-105 transition duration-300"
             >
               Send Message
             </button>
