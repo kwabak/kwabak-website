@@ -10,7 +10,7 @@ const WhyChooseUs = () => {
   return (
     <section
       ref={ref}
-      className="relative bg-gradient-to-b from-[#F2E5D3] via-[#DBAE8D] to-[#BFDDCE] py-28 px-6 md:px-20 text-[#1d1d1d] overflow-hidden"
+      className="relative  py-28 px-6 md:px-20 text-[#1d1d1d] overflow-hidden"
     >
       {/* Floating glow sparkles */}
       <div className="absolute right-0 top-0 w-[250px] h-full bg-gradient-to-l from-[#027A76]/10 to-transparent blur-[80px] animate-float pointer-events-none z-0"></div>

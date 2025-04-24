@@ -13,7 +13,7 @@ const CreativeExpression = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-[#F2E5D3] via-[#DBAE8D] to-[#BFDDCE] text-[#1d1d1d] py-24 px-6 md:px-20 overflow-hidden">
+    <section className="relative bg-[#fff] text-[#1d1d1d] py-24 px-6 md:px-20 overflow-hidden">
       <style>
         {`
           @keyframes glitch {
@@ -48,28 +48,10 @@ const CreativeExpression = () => {
         `}
       </style>
 
-      {/* Particle Background */}
-      <Particles
-        id="tsparticles-creative"
-        options={{
-          particles: {
-            number: { value: 40, density: { enable: true, value_area: 1200 } },
-            shape: { type: "circle" },
-            color: { value: ["#E86C4F", "#BFDDCE", "#F4A24C"] },
-            opacity: { value: 0.3, random: true },
-            size: { value: 3, random: true },
-            move: { enable: true, speed: 0.5, direction: "none", random: true },
-          },
-          interactivity: {
-            events: { onhover: { enable: true, mode: "bubble" } },
-            modes: { bubble: { distance: 200, size: 5, duration: 2, opacity: 0.6 } },
-          },
-        }}
-        className="absolute inset-0 z-0"
-      />
+      
 
       {/* Blurred Brand Image Background */}
-      <div className="absolute top-0 z-10 opacity-90 rotate-[10deg] left-[-100px] w-[400px] h-[400px] overflow-hidden">
+      {/* <div className="absolute top-0 z-10 opacity-90 rotate-[10deg] left-[-100px] w-[400px] h-[400px] overflow-hidden">
         <img
           src={brandImage}
           alt="Blurred Brand Background"
@@ -83,7 +65,7 @@ const CreativeExpression = () => {
           alt="Blurred Brand Background"
           className="w-full  h-full object-cover filter blur-[8px] scale-110"
         />
-      </div>
+      </div> */}
 
       {/* Glow Overlay */}
       <div className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(191,221,206,0.3),rgba(219,174,141,0.2))] blur-[120px] rounded-full z-0 animate-pulse wave-bg" />
@@ -96,8 +78,8 @@ const CreativeExpression = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-6xl font-extrabold bg-clip-text text-[#1d1d1d] animate-glitch mb-6">
-            Our Creative <span className="text-[#027A76]">Expression</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-[#1d1d1d] animate-glitch mb-6">
+            Our Creative <span className="text-[#E86C4F]">Expression</span>
           </h2>
           <p className="text-lg md:text-xl text-[#1d1d1d]/80 max-w-4xl mx-auto">
             Kwabak's visual identity blends cultural heritage with innovation. Our logo fuses Ghanaian Adinkra symbols—UAC Nkanea and Nkyinkyim—embodying technological progress and adaptive resilience.

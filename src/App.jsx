@@ -41,7 +41,7 @@ const App = () => {
   if (isLoading) return <Loader />;
 
   return (
-    <main className="overflow-x-hidden bg-[#F2E5D3]">
+    <main className="overflow-x-hidden bg-[#fff]"> {/*F2E5D3*/}
       <Navbar scrollToSection={scrollToSection} />
       
       <div ref={homeRef}>
