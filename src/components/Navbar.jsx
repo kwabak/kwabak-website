@@ -1,13 +1,16 @@
+
+
+
 // // Navbar.jsx
-// import { useState } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
+// import { AnimatePresence, motion } from "framer-motion";
 // import { Menu, X } from "lucide-react";
+// import { useState } from "react";
 // import Logo from "../assets/logo2.png";
 
-// const Navbar = () => {
+// const Navbar = ({ scrollToSection }) => {
 //   const [isOpen, setIsOpen] = useState(false);
 
-//   const navLinks = ["Home", "About", "Services", "Contact"];
+//   const navLinks = ["Home", "About", "Services", "Brand", "Career", "Contact"];
 
 //   return (
 //     <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/10 border-b border-white/10 shadow-sm h-fit overflow-y-hidden">
@@ -19,13 +22,13 @@
 //         {/* Desktop Nav */}
 //         <div className="hidden md:flex space-x-8">
 //           {navLinks.map((link, index) => (
-//             <a
+//             <button
 //               key={index}
-//               href={link.toLowerCase()}
-//               className="text-[#1d1d1d] font-medium hover:text-[#E86C4F] transition-colors duration-200"
+//               onClick={() => scrollToSection(link)}
+//               className="text-[#1d1d1d] cursor-pointer font-medium hover:text-[#E86C4F] transition-colors duration-200"
 //             >
 //               {link}
-//             </a>
+//             </button>
 //           ))}
 //         </div>
 
@@ -49,14 +52,16 @@
 //             className="md:hidden relative px-6 pb-4 pt-2 space-y-3 bg-white/10 backdrop-blur-md border-t border-white/10 shadow"
 //           >
 //             {navLinks.map((link, index) => (
-//               <a
+//               <button
 //                 key={index}
-//                 href={link.toLowerCase()}
-//                 className="block text-[#1d1d1d] text-lg font-semibold hover:text-[#E86C4F] transition duration-300"
-//                 onClick={() => setIsOpen(false)}
+//                 onClick={() => {
+//                   scrollToSection(link);
+//                   setIsOpen(false);
+//                 }}
+//                 className="block text-[#1d1d1d] text-lg font-semibold hover:text-[#E86C4F] cursor-pointer  transition duration-300"
 //               >
 //                 {link}
-//               </a>
+//               </button>
 //             ))}
 //           </motion.div>
 //         )}
@@ -67,8 +72,6 @@
 
 // export default Navbar;
 
-
-// Navbar.jsx
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -77,17 +80,19 @@ import Logo from "../assets/logo2.png";
 const Navbar = ({ scrollToSection }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = ["Home", "About", "Services", "Contact"];
+  const navLinks = ["Home", "About", "Services", "Brand", "Career"];
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/10 border-b border-white/10 shadow-sm h-fit overflow-y-hidden">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="">
+        
+        {/* Logo */}
+        <div>
           <img src={Logo} alt="Logo" className="object-cover w-[8rem]" />
         </div>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex space-x-8">
+        {/* Centered Nav Links */}
+        <div className="hidden md:flex flex-1 justify-center space-x-8">
           {navLinks.map((link, index) => (
             <button
               key={index}
@@ -97,6 +102,16 @@ const Navbar = ({ scrollToSection }) => {
               {link}
             </button>
           ))}
+        </div>
+
+        {/* "Talk to Us" Button at Right */}
+        <div className="hidden md:flex">
+          <button
+            onClick={() => scrollToSection("Contact")}
+            className="bg-[#E86C4F] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#cf5c42] transition-all duration-300"
+          >
+            Talk to Us
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -125,11 +140,22 @@ const Navbar = ({ scrollToSection }) => {
                   scrollToSection(link);
                   setIsOpen(false);
                 }}
-                className="block text-[#1d1d1d] text-lg font-semibold hover:text-[#E86C4F] cursor-pointer  transition duration-300"
+                className="block text-[#1d1d1d] text-lg font-semibold hover:text-[#E86C4F] cursor-pointer transition duration-300"
               >
                 {link}
               </button>
             ))}
+
+            {/* Talk to Us Button in Mobile */}
+            <button
+              onClick={() => {
+                scrollToSection("Contact");
+                setIsOpen(false);
+              }}
+              className="block w-full mt-4 bg-[#E86C4F] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#cf5c42] transition-all duration-300 text-center"
+            >
+              Talk to Us
+            </button>
           </motion.div>
         )}
       </AnimatePresence>

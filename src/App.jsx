@@ -1,17 +1,18 @@
-import { useEffect, useState, useRef } from "react";
-import Loader from "./components/Loader";
-import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import WhyAfrica from "./components/WhyAfrica";
-import WhatWeDo from "./components/WhatWeDO";
-import OurProcess from "./components/OurProcess";
-import VisionAndValues from "./components/VisionAndValues";
-import MeetTheTeam from "./components/MeetTheTeam";
-import WhyChooseUs from "./components/WhyChooseUs";
+import { useEffect, useRef, useState } from "react";
 import Careers from "./components/Careers";
 import ContactSection from "./components/ContactSection";
 import CreativeExpression from "./components/CreativeExpression";
 import Footer from "./components/Footer";
+import HeroSection from "./components/HeroSection";
+import Loader from "./components/Loader";
+import MeetTheTeam from "./components/MeetTheTeam";
+import Navbar from "./components/Navbar";
+import OurProcess from "./components/OurProcess";
+import VisionAndValues from "./components/VisionAndValues";
+import WhatWeDo from "./components/WhatWeDO";
+import WhoWeAre from "./components/WhoWeAre";
+import WhyAfrica from "./components/WhyAfrica";
+import WhyChooseUs from "./components/WhyChooseUs";
 
 
 const App = () => {
@@ -20,6 +21,9 @@ const App = () => {
   const aboutRef = useRef(null);
   const servicesRef = useRef(null);
   const contactRef = useRef(null);
+  const brandRef = useRef(null);
+  const careerRef = useRef(null);
+  
 
   const scrollToSection = (section) => {
     const sections = {
@@ -27,6 +31,8 @@ const App = () => {
       About: aboutRef,
       Services: servicesRef,
       Contact: contactRef,
+      Brand: brandRef,
+      Career: careerRef,
     };
     sections[section]?.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -40,32 +46,88 @@ const App = () => {
 
   if (isLoading) return <Loader />;
 
+  // return (
+  //   <main className="overflow-x-hidden bg-[#F2E5D3]">
+  //     <Navbar scrollToSection={scrollToSection} />
+      
+  //     <div ref={homeRef}>
+  //       <HeroSection />
+  //     </div>
+
+  //     <div ref={aboutRef}>
+  //       <WhoWeAre/>
+  //       <VisionAndValues />
+  //       <WhyAfrica />
+  //       <MeetTheTeam />
+  //     </div>
+
+  //     <div ref={servicesRef}>
+  //       <WhatWeDo />
+  //       <OurProcess />
+  //       <WhyChooseUs />
+  //     </div>
+
+  //     <div ref={brandRef}>
+  //     <CreativeExpression />
+  //     </div>
+
+  //     <div ref={careerRef}>
+  //       <Careers />
+  //     </div>
+
+  //     <div ref={contactRef}>
+  //       <ContactSection />
+  //     </div>
+
+  //     <Footer />
+  //   </main>
+  // );
+
   return (
     <main className="overflow-x-hidden bg-[#F2E5D3]">
       <Navbar scrollToSection={scrollToSection} />
-      
+  
+      {/* Home includes everything */}
       <div ref={homeRef}>
         <HeroSection />
-        <WhyAfrica />
-      </div>
-
-      <div ref={servicesRef}>
         <WhatWeDo />
         <OurProcess />
+        <WhoWeAre />
         <VisionAndValues />
-        <WhyChooseUs />
         <CreativeExpression />
-      </div>
-
-      <div ref={aboutRef}>
+        <WhyAfrica />
+        <WhyChooseUs />
         <MeetTheTeam />
         <Careers />
-      </div>
-
-      <div ref={contactRef}>
         <ContactSection />
       </div>
-
+  
+      {/* Also group individual refs for targeted scroll */}
+      <div ref={aboutRef} className="position: absolute; top: -9999px">
+        <WhoWeAre />
+        <VisionAndValues />
+        <WhyAfrica />
+        <MeetTheTeam />
+      </div>
+  
+      <div ref={servicesRef} className="position: absolute; top: -9999px">
+        <WhatWeDo />
+        <OurProcess />
+        <WhyChooseUs />
+      </div>
+  
+      <div ref={brandRef} className="position: absolute; top: -9999px">
+        <CreativeExpression />
+      </div>
+  
+      <div ref={careerRef} className="position: absolute; top: -9999px">
+        <Careers />
+      </div>
+  
+      <div ref={contactRef} className="position: absolute; top: -9999px">
+        <ContactSection />
+      </div>
+  
       <Footer />
     </main>
   );
