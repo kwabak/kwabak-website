@@ -1,16 +1,43 @@
 import { motion, useInView } from "framer-motion";
 import { Award, Globe, Lightbulb } from "lucide-react";
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Icon from "../assets/Icon.png";
+
+const Counter = ({ target, duration }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = parseInt(target);
+    const incrementTime = (duration * 1000) / end;
+
+    const timer = setInterval(() => {
+      start += 1;
+      setCount(start);
+      if (start === end) clearInterval(timer);
+    }, incrementTime);
+
+    return () => clearInterval(timer);
+  }, [target, duration]);
+
+  return (
+    <span>
+      {count}%
+    </span>
+  );
+};
 
 const WhyChooseUs = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section
+    <motion.section
       ref={ref}
-      className="relative  py-28 px-6 md:px-20 text-[#1d1d1d] overflow-hidden"
+      className="relative py-28 px-6 md:px-20 text-[#1d1d1d] overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={isInView ? { opacity: 1 } : {}}
+      transition={{ duration: 1 }}
     >
       {/* Floating glow sparkles */}
       <div className="absolute right-0 top-0 w-[250px] h-full bg-gradient-to-l from-[#027A76]/10 to-transparent blur-[80px] animate-float pointer-events-none z-0"></div>
@@ -70,13 +97,7 @@ const WhyChooseUs = () => {
           </div>
 
           <div className="flex items-start gap-4">
-          <img src={Icon} alt="Sustainable Growth Logo" className="w-8 h-8 shrink-0" />
-          {/* <img 
-            src="/assets/Icon.png" 
-            alt="Sustainable Growth Logo" 
-            className="w-8 h-8 shrink-0" 
-          /> */}
-            {/* <Leaf className="text-green-500 w-8 h-8 shrink-0" /> */}
+            <img src={Icon} alt="Sustainable Growth Logo" className="w-8 h-8 shrink-0" />
             <div>
               <h3 className="text-2xl font-semibold mb-1">Sustainable Growth</h3>
               <p className="text-[#1d1d1d]/80">
@@ -96,7 +117,7 @@ const WhyChooseUs = () => {
             className="text-center"
           >
             <p className="text-6xl font-extrabold text-[#027A76] drop-shadow-lg">
-              45%
+              {isInView && <Counter target="45" duration={2} />}
             </p>
             <p className="text-[#1d1d1d]/70 text-lg">Faster Booking Time</p>
           </motion.div>
@@ -108,7 +129,7 @@ const WhyChooseUs = () => {
             className="text-center"
           >
             <p className="text-6xl font-extrabold text-[#E86C4F] drop-shadow-lg">
-              40%
+              {isInView && <Counter target="40" duration={2.5} />}
             </p>
             <p className="text-[#1d1d1d]/70 text-lg">Operational Efficiency Boost</p>
           </motion.div>
@@ -120,13 +141,13 @@ const WhyChooseUs = () => {
             className="text-center"
           >
             <p className="text-6xl font-extrabold text-green-500 drop-shadow-lg">
-              100%
+              {isInView && <Counter target="100" duration={3} />}
             </p>
             <p className="text-[#1d1d1d]/70 text-lg">Afrocentric Solutions</p>
           </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

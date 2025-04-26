@@ -12,6 +12,7 @@ import Careers from "./components/Careers";
 import ContactSection from "./components/ContactSection";
 import CreativeExpression from "./components/CreativeExpression";
 import Footer from "./components/Footer";
+import WhoWeAre from "./components/WhoWeAre";
 
 
 const App = () => {
@@ -52,6 +53,8 @@ const App = () => {
       <div ref={servicesRef}>
         <WhatWeDo />
         <OurProcess />
+        
+        <WhoWeAre />
         <VisionAndValues />
         <WhyChooseUs />
         <CreativeExpression />

@@ -1,0 +1,15 @@
+/* Optional: match placeholder color */
+.react-tel-input .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  
+  /* Optional: better flag alignment */
+  .react-tel-input .selected-flag {
+    padding-left: 12px !important;
+  }
+  
+  /* Optional: smooth border transition */
+  .react-tel-input .form-control {
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+  }
+  
