@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaUsers, FaRocket, FaHeart, FaBrain, FaCode, FaLightbulb, FaCheckCircle, FaTimes } from "react-icons/fa";
-import teamworkImage from "../assets/people.jpg";
+import { FaUsers, FaRocket, FaPaintBrush , FaBrain, FaCode, FaLightbulb, FaCheckCircle, FaTimes } from "react-icons/fa";
+import teamworkImage from "../assets/woman-smile.jpg";
 import { X } from "lucide-react";
+import { WiStars } from "react-icons/wi";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -34,8 +35,8 @@ const VisionAndValues = () => {
   const coreValues = [
     { icon: FaUsers, title: "Teamwork", text: "Go together to go far. Teamwork unlocks potential that no individual can achieve alone." },
     { icon: FaRocket, title: "Impact", text: "Execute with impact. Results speak louder than intentions." },
-    { icon: FaHeart, title: "Design", text: "Design must inspire admiration. Aesthetics and function are non-negotiable." },
-    { icon: FaBrain, title: "Uniqueness", text: "Stand out. The world doesn't need another average solution." },
+    { icon: FaPaintBrush , title: "Design", text: "Design must inspire admiration. Aesthetics and function are non-negotiable." },
+    { icon: WiStars, title: "Uniqueness", text: "Stand out. The world doesn't need another average solution." },
     { icon: FaCode, title: "Honesty", text: "Speak with absolute honesty, treat with unwavering respect. Truth and dignity go hand in hand." },
     { icon: FaLightbulb, title: "Innovation", text: "Embrace failure as the price of innovation. Learn. Adapt. Overcome." },
     { icon: FaCheckCircle, title: "Details", text: "Obsess over details. They're not \"small things\" - they're everything." },
@@ -56,7 +57,7 @@ const VisionAndValues = () => {
           >
             <h3 className="text-4xl font-bold text-[#E86C4F]">Our Mission</h3>
             <p className="leading-8 text-gray-700 text-lg">
-              To help African SMEs grow and succeed through impactful technology and strategic guidance, while internally building a company where exceptional talent thrives—all to create lasting prosperity across Africa.
+            To help African SMEs grow and succeed through impactful technology and strategic guidance, while internally building a company where exceptional talent thrives—all to create lasting prosperity across Africa.
             </p>
           </motion.div>
 
@@ -68,7 +69,7 @@ const VisionAndValues = () => {
           >
             <h3 className="text-4xl font-bold text-[#027A76]">Our Vision</h3>
             <p className="leading-8 text-gray-700 text-lg">
-              To be the partner of choice for businesses in Africa, big or small, public or private—equipping changemakers with solutions that ignite innovation, unleash potential, and spark waves of prosperity across the continent.
+            To be the partner of choice for businesses in Africa, big or small, public or private, equipping change makers with solutions that ignite innovation, unleash potential, and continue to create a wave of prosperity across the continent.
             </p>
           </motion.div>
         </div>
@@ -149,49 +150,62 @@ const VisionAndValues = () => {
           >
             {/* Modal Content */}
             <motion.div
-              className="bg-white rounded-lg shadow-lg max-w-4xl w-full p-8 relative overflow-y-auto max-h-[90vh] custom-scrollbar"
+              className="bg-white rounded-lg shadow-lg max-w-4xl w-full p-8 relative overflow-y-auto max-h-[90vh]"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setShowMore(false)}
-                className="absolute top-4 right-4 text-gray-500 hover:text-[#E86C4F] text-2xl cursor-pointer transition duration-300"
-              >
-                <X size={24} />
-              </button>
+            >  
+              {/* Custom Scrollbar Styling */}
+              <style jsx>{`
+                /* WebKit (Chrome, Edge, Safari) */
+                        .custom-scrollbar::-webkit-scrollbar {
+                          width: 10px;
+                        }
+                        .custom-scrollbar::-webkit-scrollbar-track {
+                          background: transparent;
+                          border-left: 1px solid #DBAE8D;
+                          border-radius: 5px;
+                        }
+                        .custom-scrollbar::-webkit-scrollbar-thumb {
+                          background: #E86C4F;
+                          border-radius: 5px;
+                          border: 2px solid transparent;
+                          background-clip: padding-box;
+                        }
+                        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                          background: #027A76;
+                          border: 2px solid transparent;
+                          background-clip: padding-box;
+                        }
+              `}</style>
+              <div className="custom-scrollbar">
+                {/* Close Button */}
+                <button
+                  onClick={() => setShowMore(false)}
+                  className="absolute top-4 right-4 text-gray-500 hover:text-[#E86C4F] text-2xl cursor-pointer transition duration-300"
+                >
+                  <X size={24} />
+                </button>
 
-              <h3 className="text-3xl font-bold mb-6 text-center text-[#000]">All Our Core Values</h3>
+                <h3 className="text-3xl font-bold mb-6 text-center text-[#000]">All Our Core Values</h3>
 
-              <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-                {coreValues.map((value, index) => (
-                  <div key={index} className="flex flex-col items-center text-center p-4 bg-gray-50 rounded-lg shadow hover:shadow-xl hover:scale-105 transform transition-all duration-300">
-                    <value.icon className="text-3xl text-[#E86C4F] mb-2" />
-                    <h4 className="font-semibold text-lg text-[#1d1d1d]">{value.title}</h4>
-                    <p className="text-gray-600 text-sm mt-2">{value.text}</p>
-                  </div>
-                ))}
+                <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+                  {coreValues.map((value, index) => (
+                    <div key={index} className="flex flex-col items-center text-center p-4 bg-gray-50 rounded-lg shadow hover:shadow-xl hover:scale-105 transform transition-all duration-300">
+                      <value.icon className="text-3xl text-[#E86C4F] mb-2" />
+                      <h4 className="font-semibold text-lg text-[#1d1d1d]">{value.title}</h4>
+                      <p className="text-gray-600 text-sm mt-2">{value.text}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Custom Scrollbar Styling */}
-      <style jsx>{`
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: transparent;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background-color: #E86C4F;
-          border-radius: 10px;
-        }
-      `}</style>
+      
     </section>
   );
 };

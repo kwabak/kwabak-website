@@ -32,7 +32,7 @@ const steps = [
   {
     title: "Knowledge Sharing",
     description: "From launch to growth, we ensure success and long-term sustainability.",
-    icon: <FaRocket className="text-[#027A76] text-4xl" />,
+    icon: <FaLightbulb className="text-[#027A76] text-4xl" />,
     details: " As we work together, we prioritize knowledge transfer. We empower your team with the skills and insights to manage and sustain the solutions we provide. This collaboration ensures that your organization is equipped for ongoing success.",
   },
   {

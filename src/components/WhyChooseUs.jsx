@@ -40,12 +40,12 @@ const WhyChooseUs = () => {
       transition={{ duration: 1 }}
     >
       {/* Floating glow sparkles */}
-      <div className="absolute right-0 top-0 w-[250px] h-full bg-gradient-to-l from-[#027A76]/10 to-transparent blur-[80px] animate-float pointer-events-none z-0"></div>
+      <div className="absolute right-0 top-0 w-[250px] h-full bg-gradient-to-l from-[#E86C4F]/10 to-transparent blur-[80px] animate-float pointer-events-none z-40"></div>
 
       {/* Giant glowing bulb background */}
-      <Lightbulb
-        className="absolute bottom-0 right-[-3rem] w-[800px] h-[900px] text-[#E86C4F]/20 rotate-[-25deg] pointer-events-none z-0 blur-sm"
-      />
+      {/* <Lightbulb
+        className="absolute bottom-0 right-[-3rem] w-[800px] h-[900px] text-[#000]/20 rotate-[-25deg] pointer-events-none z-0 blur-sm"
+      /> */}
 
       {/* Section Title */}
       <div className="text-center">
@@ -65,8 +65,7 @@ const WhyChooseUs = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-1">African Insight</h3>
               <p className="text-[#1d1d1d]/80">
-                We understand Africa’s unique business landscape from the inside
-                out, delivering tailored solutions for SMEs.
+              We understand Africa’s unique business landscape from the inside out, delivering solutions tailored to the dynamic realities of SMEs across the continent. Our approach drives meaningful impact where it matters most.
               </p>
             </div>
           </div>
@@ -76,40 +75,36 @@ const WhyChooseUs = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-1">Proven Impact</h3>
               <p className="text-[#1d1d1d]/80">
-                Helped an Accra-based agency reduce booking time by {" "}
-                <span className="text-[#027A76] font-bold">45%</span> and
-                improve efficiency by {" "}
-                <span className="text-[#027A76] font-bold">40%</span> through a
-                custom solution.
+              We’ve transformed operations for businesses across multiple sectors, with an Accra-based travel agency reducing booking processing time by  {" "}
+                <span className="text-[#027A76] font-bold">45%</span> and increasing operational efficiency by  {" "}
+                <span className="text-[#027A76] font-bold">40%</span> after implementing our custom business management system.
               </p>
             </div>
           </div>
 
           <div className="flex items-start gap-4">
-            <Lightbulb className="text-yellow-500 w-8 h-8 shrink-0" />
+            <Lightbulb className="text-[#F4A24C] w-8 h-8 shrink-0" />
             <div>
               <h3 className="text-2xl font-semibold mb-1">Core Values</h3>
               <p className="text-[#1d1d1d]/80">
-                We prioritize elegance, practicality, and meaningful design. No
-                fluff. Just results.
+              We champion excellence. No compromise. We deliver solutions that look good and create real impact. Every detail matters—from discovery to implementation to ongoing support. We embrace simplicity and practicality because the best solutions are those that are easy to understand and use.
               </p>
             </div>
           </div>
 
           <div className="flex items-start gap-4">
-            <img src={Icon} alt="Sustainable Growth Logo" className="w-8 h-8 shrink-0" />
+            <img src={Icon} alt="Sustainable Growth Logo" className="w-[2rem] shrink-0" />
             <div>
               <h3 className="text-2xl font-semibold mb-1">Sustainable Growth</h3>
               <p className="text-[#1d1d1d]/80">
-                We build scalable solutions to drive wealth and reduce poverty
-                across Africa.
+              We build digital solutions that empower SMEs in Africa to create sustainable wealth and drive poverty reduction across the continent.
               </p>
             </div>
           </div>
         </div>
 
         {/* Right: Animated Stats */}
-        <div className="space-y-10">
+        <div className="space-y-20">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -140,7 +135,7 @@ const WhyChooseUs = () => {
             transition={{ duration: 1.4, delay: 0.6 }}
             className="text-center"
           >
-            <p className="text-6xl font-extrabold text-green-500 drop-shadow-lg">
+            <p className="text-6xl font-extrabold text-[#F4A24C] drop-shadow-lg">
               {isInView && <Counter target="100" duration={3} />}
             </p>
             <p className="text-[#1d1d1d]/70 text-lg">Afrocentric Solutions</p>

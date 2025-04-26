@@ -90,7 +90,7 @@ const App = () => {
       {/* Home includes everything */}
       <div ref={homeRef}>
         <HeroSection />
-        <WhatWeDo />
+        {/* <WhatWeDo />
         <OurProcess />
         <WhoWeAre />
         <VisionAndValues />
@@ -99,7 +99,7 @@ const App = () => {
         <WhyChooseUs />
         <MeetTheTeam />
         <Careers />
-        <ContactSection />
+        <ContactSection /> */}
       </div>
   
       {/* Also group individual refs for targeted scroll */}

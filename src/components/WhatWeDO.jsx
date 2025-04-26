@@ -6,31 +6,31 @@ import Modal from "./Modal";
 const services = [
   {
     title: "Software & App Development",
-    description: "Custom solutions that power African businesses—mobile, web, and enterprise-grade systems.",
+    description: "We build custom software solutions and craft high-performance iOS and Android applications built for scale.",
     icon: <FaCode className="text-4xl text-[#E86C4F]" />, 
     details: "We create custom software solutions precisely matched to your business needs. From professional websites and e-commerce platforms to intuitive mobile apps across all operating systems, our development team delivers products that perform and impress. Our design expertise ensures attractive, user-friendly interfaces that strengthen your brand and drive engagement, whether building new or transforming existing solutions."
   },
   {
     title: "AI Solutions",
-    description: "Leverage artificial intelligence to automate, predict, and grow smarter.",
+    description: "Enterprise-grade AI integration without the complexity. Unlock intelligence across your business ecosystem.",
     icon: <FaMicrochip className="text-4xl text-[#027A76]" />,
     details: "We provide businesses with seamless access to cutting-edge AI technologies and tools, eliminating the need for in-house development. Our scalable AI solutions integrate effortlessly into your existing applications, empowering your organization to harness the power of AI for automation, personalized customer experiences, and advanced decision-making. With our service, you can unlock new efficiencies and insights, driving innovation while focusing on your core business objectives."
   },
   {
     title: "Data Intelligence",
-    description: "Turn raw data into actionable insights with our analytics and visualization tools.",
+    description: "Turn untapped data into strategic clarity for effective decision making.",
     icon: <FaChartBar className="text-4xl text-[#E86C4F]" />,
     details: "We transform untapped data into actionable insights, shifting decision-making from gut feelings to informed choices. Our analytics frameworks uncover patterns, forecast trends, and reveal opportunities that many African businesses gather but fail to fully exploit. From identifying hidden revenue streams to optimizing operational costs, we help you leverage your data for measurable business impact."
   },
   {
     title: "Brand Strategy & Design",
-    description: "Build timeless African brands with stunning design and clear messaging.",
+    description: "Visual storytelling with strategic purpose. We craft identities that command attention and drive results.",
     icon: <FaPalette className="text-4xl text-[#027A76]" />,
     details: "We create compelling visual identities focused on highlighting your brand's strengths and developing distinctive strategies that set you apart in the marketplace. We offer a full spectrum of brand identity & marketing services, from logo/web design to SEO to integrated campaigns, crafting targeted approaches that help you establish a unique identity and connect with your audience. Our experienced professionals leverage creative thinking to deliver compelling results that engage users and elevate your brand presence."
   },
   {
     title: "Management Consulting",
-    description: "Strategy, planning, and transformation support tailored to African SMEs.",
+    description: "Operational excellence through ruthless prioritization. We identify the invisible barriers to your growth.",
     icon: <FaHandsHelping className="text-4xl text-[#F4A24C]" />,
     details: "We transform your core business operations through strategic analysis and practical implementation. Our team delivers focused solutions in sales effectiveness, market entry strategy, operational efficiency, growth planning and security risk management. We identify hidden performance barriers and build measurable improvement frameworks that create lasting competitive advantages. Our consulting approach complements our technical expertise, ensuring your business objectives and technology implementations are perfectly aligned."
   },

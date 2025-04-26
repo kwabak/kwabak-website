@@ -1,13 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import backgroundImage from "../assets/pressure-woman.jpg";
 import ReCAPTCHA from "react-google-recaptcha";
 
+// Register GSAP plugins
 if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 }
 
 const ContactSection = () => {
@@ -19,6 +20,8 @@ const ContactSection = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const recaptchaRef = useRef(null);
   const fileInputRef = useRef(null);
+  const formRef = useRef(null);
+  const firstNameInputRef = useRef(null); // Ref for the first input
 
   // Dynamically load SMTP.js
   useEffect(() => {
@@ -37,6 +40,15 @@ const ContactSection = () => {
 
     if (!recaptchaValue) {
       setError("Please verify you're not a robot.");
+      // scroll to error
+      gsap.to(window, {
+        scrollTo: {
+          y: formRef.current,
+          offsetY: 50,
+        },
+        duration: 1,
+        ease: "power3.inOut",
+      });
       return;
     }
 
@@ -52,10 +64,28 @@ const ContactSection = () => {
     // Validate file size (max 10MB) and presence
     if (file && file.size > 10 * 1024 * 1024) {
       setError("File size exceeds 10MB limit.");
+      // scroll to error
+      gsap.to(window, {
+        scrollTo: {
+          y: formRef.current,
+          offsetY: 50,
+        },
+        duration: 1,
+        ease: "power3.inOut",
+      });
       return;
     }
     if (file && (!file.name || file.size === 0)) {
       setError("Invalid file selected. Please choose a valid file.");
+      // scroll to error
+      gsap.to(window, {
+        scrollTo: {
+          y: formRef.current,
+          offsetY: 50,
+        },
+        duration: 1,
+        ease: "power3.inOut",
+      });
       return;
     }
 
@@ -116,13 +146,12 @@ const ContactSection = () => {
         Password: "19D6B0EC97B8B276B9A8B7739A180F599C87",
         Port: 2525,
         To: "dansoderrick80@gmail.com",
-        From: "dansoderrick80@gmail.com", // Use verified Elastic Email address
-        ReplyTo: email, // User's email for replies
+        From: "dansoderrick80@gmail.com",
+        ReplyTo: email,
         Subject: "New Contact Form Submission",
         Body: emailBody,
       };
 
-      // Add attachment if present
       if (attachment) {
         emailConfig.Attachments = [attachment];
       }
@@ -145,10 +174,28 @@ const ContactSection = () => {
         }
       } else {
         setError(`Failed to send email. Server response: ${result}`);
+        // scroll to error
+      gsap.to(window, {
+        scrollTo: {
+          y: formRef.current,
+          offsetY: 50,
+        },
+        duration: 1,
+        ease: "power3.inOut",
+      });
       }
     } catch (err) {
       console.error("Submission error:", err);
       setError(`An error occurred while sending the email: ${err.message}`);
+      // scroll to error
+      gsap.to(window, {
+        scrollTo: {
+          y: formRef.current,
+          offsetY: 50,
+        },
+        duration: 1,
+        ease: "power3.inOut",
+      });
     }
 
     setLoading(false);
@@ -169,6 +216,37 @@ const ContactSection = () => {
 
   const triggerFileInput = () => {
     fileInputRef.current.click();
+  };
+
+  // Handle "Share Your Thoughts" button click
+  const handleShareThoughts = () => {
+    if (formRef.current) {
+      // Scroll to the form
+      gsap.to(window, {
+        scrollTo: {
+          y: formRef.current,
+          offsetY: 50,
+        },
+        duration: 1,
+        ease: "power3.inOut",
+        onComplete: () => {
+          // Focus the first input after scrolling
+          if (firstNameInputRef.current) {
+            firstNameInputRef.current.focus();
+          }
+        },
+      });
+
+      // Animate the form to draw focus
+      gsap.to(formRef.current, {
+        scale: 1.02,
+        boxShadow: "0 0 20px rgba(232, 108, 79, 0.8)",
+        duration: 0.5,
+        ease: "power3.out",
+        repeat: 1,
+        yoyo: true,
+      });
+    }
   };
 
   useEffect(() => {
@@ -204,24 +282,27 @@ const ContactSection = () => {
           <h2 className="contact-title text-4xl md:text-5xl font-extrabold leading-tight">
             Feeling the pressure?
           </h2>
-          <p className="contact-subtitle text-white/80 text-lg">
+          <p className="contact-subtitle text-white text-lg">
             We understand the struggle and we’re here to help lighten your load.
           </p>
           <div className="space-y-4">
             <h3 className="text-3xl font-semibold">Let’s work together</h3>
-            <p className="text-lg text-white/80">
+            <p className="text-lg text-white">
               Your vision deserves exceptional support. Share your goals,
               challenges, or ideas below and let’s create something amazing
               together. We’re excited to hear from you!
             </p>
           </div>
-          <button className="contact-button inline-block mt-6 px-6 py-3 bg-[#E86C4F] hover:bg-[#d8563f] text-white font-medium rounded-full shadow-lg transition duration-300 transform hover:scale-105 cursor-pointer">
+          <button
+            onClick={handleShareThoughts}
+            className="contact-button inline-block mt-6 px-6 py-3 bg-[#E86C4F] hover:bg-[#d8563f] text-white font-medium rounded-full shadow-lg transition duration-300 transform hover:scale-105 cursor-pointer"
+          >
             Share Your Thoughts
           </button>
         </div>
 
         {/* Form */}
-        <div className="flex justify-center">
+        <div className="flex justify-center" ref={formRef}>
           {submitted ? (
             <div className="text-white bg-green-600 p-4 rounded-lg shadow-lg">
               🎉 Thank you! Your message has been sent.
@@ -245,6 +326,7 @@ const ContactSection = () => {
                   placeholder="First name"
                   className="w-1/2 p-3 rounded-lg border border-[#DBAE8D] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-[#E86C4F]"
                   required
+                  ref={firstNameInputRef} // Added ref to the first input
                 />
                 <input
                   type="text"
@@ -333,47 +415,15 @@ const ContactSection = () => {
 
               <div>
                 <label className="block text-white text-sm mb-2">Attach file (optional)</label>
-                <div className="flex items-center space-x-4">
-                  <button
-                    type="button"
-                    onClick={triggerFileInput}
-                    className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-xl border border-[#DBAE8D] text-white rounded-lg hover:bg-[#E86C4F] hover:border-[#E86C4F] focus:outline-none focus:ring-2 focus:ring-[#E86C4F] transition duration-300"
-                  >
-                    <svg
-                      className="w-5 h-5 mr-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M15.172 7l-6.586 6.586a2 2 0 002.828 2.828l6.586-6.586a4 4 0 00-5.656-5.656l-6.586 6.586a6 6 0 008.485 8.485l6.586-6.586"
-                      />
-                    </svg>
-                    Attach File
-                  </button>
-                  <input
-                    type="file"
-                    name="attachment"
-                    accept=".png,.jpg,.jpeg,.pdf,.doc,.docx"
-                    ref={fileInputRef}
-                    onChange={handleFileChange}
-                    className="hidden"
-                  />
-                </div>
-                {selectedFile && (
-                  <div className="mt-2 flex items-center bg-white/10 backdrop-blur-md p-2 rounded-lg border border-[#DBAE8D]">
-                    <span className="text-white text-sm truncate flex-1">{selectedFile.name}</span>
+                <div className="flex gap-1 items-center">
+                  <div className="flex items-center space-x-4">
                     <button
                       type="button"
-                      onClick={removeFile}
-                      className="ml-2 p-1 text-white hover:text-[#E86C4F] focus:outline-none"
+                      onClick={triggerFileInput}
+                      className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-xl border border-[#DBAE8D] text-white rounded-lg hover:bg-[#E86C4F] hover:border-[#E86C4F] cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#E86C4F] transition duration-300"
                     >
                       <svg
-                        className="w-4 h-4"
+                        className="w-5 h-5 mr-2"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -383,12 +433,46 @@ const ContactSection = () => {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth="2"
-                          d="M6 18L18 6M6 6l12 12"
+                          d="M15.172 7l-6.586 6.586a2 2 0 002.828 2.828l6.586-6.586a4 4 0 00-5.656-5.656l-6.586 6.586a6 6 0 008.485 8.485l6.586-6.586"
                         />
                       </svg>
+                      Attach File
                     </button>
+                    <input
+                      type="file"
+                      name="attachment"
+                      accept=".png,.jpg,.jpeg,.pdf,.doc,.docx"
+                      ref={fileInputRef}
+                      onChange={handleFileChange}
+                      className="hidden"
+                    />
                   </div>
-                )}
+                  {selectedFile && (
+                    <div className="flex items-center bg-white/10 backdrop-blur-md p-2 rounded-lg border border-[#DBAE8D]">
+                      <span className="text-white text-sm truncate flex-1">{selectedFile.name}</span>
+                      <button
+                        type="button"
+                        onClick={removeFile}
+                        className="ml-2 p-1 text-white hover:text-[#E86C4F] focus:outline-none cursor-pointer"
+                      >
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  )}
+                </div>
                 <p className="text-sm text-white/60 mt-1">Supported formats: JPG, PNG, PDF, DOC, DOCX (max 10MB)</p>
               </div>
 
