@@ -35,13 +35,13 @@ const teamMembers = [
 
 const MeetTheTeam = () => {
   return (
-    <section className="relative bg-gradient-to-b from-[#F2E5D3] via-[#DBAE8D] to-[#BFDDCE] text-[#1d1d1d] py-24 px-6 md:px-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto text-center mb-16">
+    <section className="relative bg-gradient-to-b from-white via-[#F2E5D3] to-[#E8DAC7] text-[#1d1d1d] py-28 px-6 md:px-20 overflow-hidden">
+      <div className="max-w-7xl mx-auto text-center mb-20">
         <h2 className="text-4xl md:text-6xl font-extrabold mb-4">
           Meet the <span className="text-[#E86C4F]">Team</span>
         </h2>
-        <p className="text-[#1d1d1d]/70 text-lg md:text-xl">
-          A passionate crew pushing boundaries through tech and creativity.
+        <p className="text-[#1d1d1d]/70 text-lg md:text-xl max-w-2xl mx-auto">
+          Passionate innovators driving African progress through design, strategy, and technology.
         </p>
       </div>
 
@@ -57,33 +57,33 @@ const MeetTheTeam = () => {
           >
             <Tilt
               glareEnable={true}
-              glareMaxOpacity={0.3}
+              glareMaxOpacity={0.2}
               glareColor="#E86C4F"
-              tiltMaxAngleX={10}
-              tiltMaxAngleY={10}
-              className="bg-white/20 p-6 rounded-3xl shadow-xl backdrop-blur-md transform transition-transform hover:scale-[1.03] border border-white/20"
+              tiltMaxAngleX={6}
+              tiltMaxAngleY={6}
+              className="bg-white shadow-xl p-6 rounded-2xl transition-transform transform hover:scale-105"
             >
-              <div className="overflow-hidden rounded-2xl mb-4">
+              <div className="overflow-hidden rounded-xl mb-4">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-64 object-cover object-center rounded-2xl group-hover:scale-105 transition-transform duration-300 shadow-md border-4 border-[#E86C4F]/20"
+                  className="w-full h-60 object-cover rounded-xl group-hover:scale-105 transition-transform duration-300 shadow-lg"
                 />
               </div>
               <div className="text-center space-y-2">
-                <h3 className="text-xl font-semibold group-hover:scale-105 transition-transform duration-200">
+                <h3 className="text-xl font-semibold group-hover:text-[#E86C4F] transition-colors duration-200">
                   {member.name}
                 </h3>
-                <p className="text-[#E86C4F] font-medium">{member.title}</p>
-                <p className="text-[#1d1d1d]/70 text-sm">{member.bio}</p>
+                <p className="text-[#027A76] font-medium uppercase tracking-wide text-sm">{member.title}</p>
+                <p className="text-[#1d1d1d]/70 text-sm leading-relaxed">
+                  {member.bio}
+                </p>
               </div>
             </Tilt>
           </motion.div>
         ))}
       </div>
 
-      {/* Glowing decorative blob */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-[#E86C4F]/20 to-[#027A76]/20 rounded-full blur-[180px] opacity-30 z-0 animate-pulse"></div>
     </section>
   );
 };

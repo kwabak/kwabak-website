@@ -7,16 +7,13 @@ import Logo from "../assets/logo2.png"; // Adjust the path to your actual logo
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-[#F2E5D3] to-[#F4A24C] text-black py-12 px-6 md:px-20 relative overflow-hidden">
-      {/* Animated Glowing Background Decoration */}
-      <div className="absolute hidden md:block top-0 right-0 z-0 md:w-[600px] md:h-[600px] w-full h-full">
-        <img src={LogoHuge} alt="Glowing Background" className="w-full h-full object-cover opacity-20 md:animate-pulse animate-none" />
-      </div>
+    <footer className="bg-black text-white py-12 px-6 md:px-20 relative overflow-hidden">
+      
 
       <div className="max-w-7xl mx-auto place-content-center grid md:grid-cols-1 gap-12">
         {/* Company Information */}
         <div className="space-y-4">
-          <img src={Logo} alt="Kwabak Logo" className="w-[10rem] h-auto" />
+          {/* <img src={Logo} alt="Kwabak Logo" className="w-[10rem] h-auto" /> */}
           <p className=""> Location: C08 Manyo Close, Adabraka, Accra - Ghana</p>
           <span className="">Email:</span> 
           <a href="mailto:hello@kwabak.com" className="text-[#E86C4F] hover:text-[#d8563f] cursor-pointor">hello@kwabak.com</a>
@@ -24,7 +21,7 @@ const Footer = () => {
 
         {/* Footer Tagline */}
         <div className="space-y-4 text-left">
-          <h3 className="text-3xl font-bold">Technology, Strategy, Execution, and Growth</h3>
+          <h3 className="text-3xl font-bold">Technology | Strategy | Execution | Growth</h3>
           <p className="text-lg md:w-[30rem]">
             We help SMEs in Africa grow and transform through the thoughtful integration of technology, strategy, and operational systems.
           </p>

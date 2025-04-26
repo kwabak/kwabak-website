@@ -83,7 +83,7 @@ const Navbar = ({ scrollToSection }) => {
   const navLinks = ["Home", "About", "Services", "Brand", "Career"];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/10 border-b border-white/10 shadow-sm h-fit overflow-y-hidden">
+    <nav className="fixed top-0 left-0 w-full z-50  bg-white  h-fit overflow-y-hidden">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         
         {/* Logo */}
