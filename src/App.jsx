@@ -46,51 +46,14 @@ const App = () => {
 
   if (isLoading) return <Loader />;
 
-  // return (
-  //   <main className="overflow-x-hidden bg-[#F2E5D3]">
-  //     <Navbar scrollToSection={scrollToSection} />
-      
-  //     <div ref={homeRef}>
-  //       <HeroSection />
-  //     </div>
-
-  //     <div ref={aboutRef}>
-  //       <WhoWeAre/>
-  //       <VisionAndValues />
-  //       <WhyAfrica />
-  //       <MeetTheTeam />
-  //     </div>
-
-  //     <div ref={servicesRef}>
-  //       <WhatWeDo />
-  //       <OurProcess />
-  //       <WhyChooseUs />
-  //     </div>
-
-  //     <div ref={brandRef}>
-  //     <CreativeExpression />
-  //     </div>
-
-  //     <div ref={careerRef}>
-  //       <Careers />
-  //     </div>
-
-  //     <div ref={contactRef}>
-  //       <ContactSection />
-  //     </div>
-
-  //     <Footer />
-  //   </main>
-  // );
-
   return (
-    <main className="overflow-x-hidden bg-[#fff]"> {/*F2E5D3*/}
+    <main className="overflow-x-hidden bg-[#F2E5D3]">
       <Navbar scrollToSection={scrollToSection} />
   
       {/* Home includes everything */}
       <div ref={homeRef}>
         <HeroSection />
-        <WhatWeDo />
+        {/* <WhatWeDo />
         <OurProcess />
         <WhoWeAre />
         <VisionAndValues />
@@ -99,7 +62,7 @@ const App = () => {
         <WhyChooseUs />
         <MeetTheTeam />
         <Careers />
-        <ContactSection />
+        <ContactSection /> */}
       </div>
   
       {/* Also group individual refs for targeted scroll */}
