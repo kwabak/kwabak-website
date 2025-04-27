@@ -1,95 +1,67 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { PiStarFourFill } from "react-icons/pi";
-import { Particles } from "@tsparticles/react";
 import Tilt from "react-parallax-tilt";
-import brandImage from "../assets/logo-huge.png"; // Adjust the path to your brand image
 
 const CreativeExpression = () => {
   const cardVariants = {
-    hover: { scale: 1.05, rotate: 2, boxShadow: "0 0 15px rgba(232, 108, 79, 0.5)" },
-    initial: { opacity: 0, y: 40 },
+    hover: { scale: 1.05, rotate: 1 },
+    initial: { opacity: 0, y: 50 },
     animate: { opacity: 1, y: 0 },
   };
 
   return (
-    <section className="relative bg-[#fff] text-[#1d1d1d] py-24 px-6 md:px-20 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-[#fefefe] via-[#f9fafb] to-[#fefefe] text-[#1d1d1d] py-28 px-6 md:px-20 overflow-hidden">
       <style>
         {`
-          @keyframes glitch {
-            0% { transform: translate(0); }
-            20% { transform: translate(-1px, 1px); }
-            40% { transform: translate(1px, -1px); }
-            60% { transform: translate(-1px, 0); }
-            80% { transform: translate(1px, 0); }
-            100% { transform: translate(0); }
-          }
-          .animate-glitch:hover {
-            animation: glitch 0.5s infinite;
-          }
-          .shadow-glow {
-            box-shadow: 0 0 15px rgba(244, 162, 76, 0.5), 0 0 25px rgba(232, 108, 79, 0.3);
-          }
-          .rotate-star {
-            animation: rotate 10s linear infinite;
-          }
-          @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-          }
-          .wave-bg {
-            animation: wave 15s ease-in-out infinite;
-          }
           @keyframes wave {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
           }
+          .wave-bg {
+            animation: wave 20s ease-in-out infinite;
+          }
+          .rotate-star {
+            animation: rotate 12s linear infinite;
+          }
+          @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
         `}
       </style>
 
-      
-
-      {/* Blurred Brand Image Background */}
-      {/* <div className="absolute top-0 z-10 opacity-90 rotate-[10deg] left-[-100px] w-[400px] h-[400px] overflow-hidden">
-        <img
-          src={brandImage}
-          alt="Blurred Brand Background"
-          className="w-full  h-full object-cover filter blur-[8px] scale-110"
-        />
-      </div>
-
-      <div className="absolute bottom-0 z-10 opacity-90 rotate-[10deg] right-[-100px] w-[400px] h-[400px] overflow-hidden">
-        <img
-          src={brandImage}
-          alt="Blurred Brand Background"
-          className="w-full  h-full object-cover filter blur-[8px] scale-110"
-        />
-      </div> */}
-
-      {/* Glow Overlay */}
-      <div className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(191,221,206,0.3),rgba(219,174,141,0.2))] blur-[120px] rounded-full z-0 animate-pulse wave-bg" />
-
-      <div className="max-w-6xl mx-auto space-y-16 relative z-10">
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
+        {/* Left Content */}
+        <motion.div 
+          className="flex-1 space-y-6" 
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-[#1d1d1d] animate-glitch mb-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
             Our Creative <span className="text-[#E86C4F]">Expression</span>
           </h2>
-          <p className="text-lg md:text-xl text-[#1d1d1d]/80 max-w-4xl mx-auto">
-            Kwabak's visual identity blends cultural heritage with innovation. Our logo fuses Ghanaian Adinkra symbols—UAC Nkanea and Nkyinkyim—embodying technological progress and adaptive resilience.
+          <p className="text-lg md:text-xl text-[#1d1d1d]/80">
+            Kwabak's visual identity system synthesizes cultural heritage with strategic purpose. 
+            The logo integrates two Adinkra symbols from Ghana—UAC Nkanea and Nkyinkyim—creating 
+            a distinctive mark that embodies both technological advancement and adaptive resilience.
+          </p>
+          <p className="text-lg md:text-xl text-[#1d1d1d]/80">
+            This visual framework mirrors our differentiated approach to business transformation 
+            across African markets. The interconnected pathways in our symbol represent the 
+            systematic processes we implement to convert improvised solutions into scalable business architecture.
           </p>
         </motion.div>
 
-        <motion.div
-          className="grid md:grid-cols-3 gap-10"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        {/* Right - Color System */}
+        <motion.div 
+          className="flex-1 grid md:grid-cols-1 gap-8"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
           viewport={{ once: true }}
         >
@@ -97,51 +69,50 @@ const CreativeExpression = () => {
             {
               title: "Black Typography",
               description: "Conveys authority and stability to anchor the brand.",
-              color: "text-[#E86C4F]",
+              color: "from-[#1d1d1d] to-[#333]",
             },
             {
               title: "Coral & Orange Gradient",
               description: "Symbolizes energy and transformation in our brand journey.",
-              color: "text-[#1d1d1d]",
+              color: "from-[#E86C4F] to-[#F4A24C]",
             },
             {
               title: "White Space",
               description: "Creates breathing room and visual clarity for maximum impact.",
-              color: "text-[#027A76]",
+              color: "from-[#ffffff] to-[#f9fafb]",
             },
           ].map((item, index) => (
-            <Tilt key={index} options={{ max: 15, scale: 1.05, speed: 400 }}>
+            <Tilt key={index} tiltMaxAngleX={10} tiltMaxAngleY={10} scale={1.02}>
               <motion.div
-                className="bg-white/20 backdrop-blur-2xl p-6 rounded-2xl border-4 border-[#E86C4F]/20"
+                className="bg-gradient-to-br p-6 rounded-3xl shadow-xl text-left text-[#1d1d1d] backdrop-blur-xl"
+                style={{
+                  backgroundImage: `linear-gradient(135deg, ${item.color})`,
+                }}
                 variants={cardVariants}
                 initial="initial"
                 animate="animate"
                 whileHover="hover"
                 transition={{ duration: 0.5, delay: index * 0.2 }}
               >
-                <h4 className={`text-xl font-bold ${item.color} mb-2`}>{item.title}</h4>
-                <p className="text-[#1d1d1d]/80 text-sm">{item.description}</p>
+                <h4 className="text-2xl font-bold mb-2">{item.title}</h4>
+                <p className="text-sm opacity-80">{item.description}</p>
               </motion.div>
             </Tilt>
           ))}
         </motion.div>
+      </div>
 
-        <motion.div
-          className="text-center max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-lg md:text-xl text-[#1d1d1d]/80 font-light">
-            Our visual system reflects our mission to transform businesses. The interconnected pathways in our symbol mirror our systematic approach to building scalable solutions.
-          </p>
-        </motion.div>
+      {/* Visual Language */}
+      <div className="mt-24">
+        <h3 className="text-lg font-bold md:text-4xl text-[#1d1d1d]/80 col-span-3">The visual language</h3>
+        <p className="text-lg text-[#1d1d1d]/80 col-span-3 mb-8 mt-1">
+          The visual language was designed with three key objectives
+        </p>
 
-        <motion.div
-          className="grid md:grid-cols-3 gap-10 text-left"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <motion.div 
+          className="mt-4 grid md:grid-cols-3 gap-10 text-left relative z-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
           viewport={{ once: true }}
         >
@@ -164,31 +135,40 @@ const CreativeExpression = () => {
           ].map((item, index) => (
             <motion.div
               key={index}
-              className="flex items-start gap-4"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
+              className="flex items-start gap-4 p-4 rounded-xl bg-white/70 backdrop-blur-lg shadow-md hover:scale-105 transition-all duration-300"
             >
               <PiStarFourFill className={`${item.color} text-2xl rotate-star`} />
               <div>
-                <h4 className="font-semibold text-lg mb-1 text-[#1d1d1d]">{item.title}</h4>
-                <p className="text-[#1d1d1d]/80 text-sm">{item.description}</p>
+                <h4 className="font-semibold text-lg mb-1">{item.title}</h4>
+                <p className="text-[#1d1d1d]/70 text-sm">{item.description}</p>
               </div>
             </motion.div>
           ))}
         </motion.div>
-
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-xl md:text-2xl text-[#1d1d1d]/90 max-w-3xl mx-auto font-semibold">
-            Kwabak is more than a tech partner—we’re a catalyst for scalable success and economic growth across Africa.
-          </p>
-        </motion.div>
       </div>
+
+      {/* Final Strategic Expansion Paragraph */}
+      <motion.div 
+        className="max-w-5xl mx-auto mt-24 text-center space-y-6"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
+        <h4 className="text-2xl md:text-4xl font-bold text-[#1d1d1d]/80">
+          Transforming Business, Empowering Economies
+        </h4>
+        <p className="text-lg md:text-xl text-[#1d1d1d]/80">
+          When entrepreneurs across the continent encounter our brand, they recognize a partner that 
+          comprehends both their challenges and their potential. 
+          Kwabak's expertise transforms individual business success into collective economic advancement, 
+          creating measurable impact at both organizational and national levels.
+        </p>
+        <p className="text-lg md:text-xl text-[#1d1d1d]/80">
+          This deliberate integration of heritage, design principles, and strategic positioning creates a 
+          brand system that will drive recognition and confidence as we expand our presence across African markets.
+        </p>
+      </motion.div>
     </section>
   );
 };
