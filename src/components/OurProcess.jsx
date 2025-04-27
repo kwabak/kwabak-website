@@ -120,7 +120,7 @@ const OurProcess = () => {
     {steps.slice(3).map((step, index) => (
       <Tilt key={index} tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable={false}>
         <motion.div
-          className="process-card w-[370px] flex flex-col items-center text-center bg-white/70 backdrop-blur-md p-8 rounded-2xl border border-[#E86C4F]/20 shadow-lg hover:shadow-2xl transition-transform duration-300 hover:scale-105"
+          className="process-card md:w-[370px] flex flex-col items-center text-center bg-white/70 backdrop-blur-md p-8 rounded-2xl border border-[#E86C4F]/20 shadow-lg hover:shadow-2xl transition-transform duration-300 hover:scale-105"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: (index + 3) * 0.1 }}

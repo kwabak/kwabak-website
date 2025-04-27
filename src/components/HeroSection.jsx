@@ -23,10 +23,10 @@ const glassCards = [
 
 const HeroSection = () => {
   return (
-    <section className="relative py-[6rem] md:pt-[6rem] w-full bg-gradient-to-br from-[#fff] via-[#fff] to-[#F2E5D3] text-[#1d1d1d]">
+    <section className="relative pt-16 pb-22 md:py-[6rem] md:pt-[6rem] w-full bg-gradient-to-br from-[#fff] via-[#fff] to-[#F2E5D3] text-[#1d1d1d]">
       <div className="px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Left - Text */}
-        <div className="relative z-10 py-8 px-4 sm:px-10">
+        <div className="relative z-10 py-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="relative rounded-2xl overflow-hidden shadow-xl"
+          className="relative rounded-2xl w-full overflow-hidden shadow-xl"
         >
           <img src={GroupImage} alt="Empowered Team" className="w-full h-full object-cover rounded-2xl" />
 

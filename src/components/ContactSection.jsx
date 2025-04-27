@@ -271,12 +271,12 @@ const ContactSection = () => {
 
   return (
     <section
-      className="contact-section relative py-20 px-6 md:px-20 text-white overflow-hidden bg-cover bg-center"
+      className="contact-section relative py-20 px-6 md:px-20 text-white bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="absolute inset-0 bg-[#1d1d1d]/50 z-0" />
 
-      <div className="max-w-7xl mx-auto z-10 relative grid md:grid-cols-2 gap-20 items-center">
+      <div className="z-10 relative grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
         {/* Text */}
         <div className="space-y-6">
           <h2 className="contact-title text-4xl md:text-5xl font-extrabold leading-tight">
