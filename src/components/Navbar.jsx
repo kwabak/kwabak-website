@@ -82,7 +82,7 @@ const Navbar = ({ scrollToSection }) => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="md:hidden relative px-6 pb-4 pt-2 space-y-3 bg-white/90 backdrop-blur-md border-t border-white/10 shadow"
+              className="md:hidden relative px-6 pb-4 pt-2 space-y-3 bg-white/80 backdrop-blur-md border-t border-white/10 shadow"
             >
               {navLinks.map((link, index) => (
                 <button
@@ -103,7 +103,7 @@ const Navbar = ({ scrollToSection }) => {
                   scrollToSection("Contact");
                   setIsOpen(false);
                 }}
-                className="block w-full mt-4 bg-[#E86C4F] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#cf5c42] transition-all duration-300 text-center"
+                className="block w-full mt-4 bg-[#E86C4F] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#cf5c42] transition-all duration-300 text-center cursor-pointer"
               >
                 Talk to Us
               </button>

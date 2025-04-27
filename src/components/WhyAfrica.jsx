@@ -13,8 +13,8 @@ if (typeof window !== "undefined") {
 const whyAfricaCards = [
   { text: "1B+ Population", style: "top-[20%] left-[15%]", color: "text-[#fff]" },
   { text: "Fastest Growing Economy", style: "bottom-[25%] right-[10%]", color: "text-[#00F5D4]" },
-  { text: "Tech Innovation Hub", style: "top-[40%] right-[15%]", color: "text-[#fff]" },
-  { text: "Young Workforce", style: "bottom-[30%] left-[20%]", color: "text-[#1d1d1d]" },
+  { text: "Tech Innovation Hub", style: "top-[40%] right-[5%]", color: "text-[#fff]" },
+  { text: "Young Workforce", style: "bottom-[40%] left-[25%]", color: "text-[#1d1d1d]" },
 ];
 
 const WhyAfrica = () => {
@@ -54,7 +54,7 @@ const WhyAfrica = () => {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-tr from-[#fff] via-[#fff] to-[#F2E5D3] text-white px-6 md:px-20 mt-[6rem] md:mt-0 overflow-hidden">
+    <section className="relative bg-gradient-to-tr from-[#fff] via-[#fff] to-[#F2E5D3] text-white px-6 md:px-20 pt-[6rem] md:mt-0 overflow-hidden">
       <style>
         {`
           @keyframes glitch {
@@ -125,7 +125,7 @@ const WhyAfrica = () => {
               {whyAfricaCards.map((card, i) => (
                 <motion.div
                   key={i}
-                  className={`absolute z-10 backdrop-blur-2xl bg-transparent text-[#1d1d1d] px-4 py-2 rounded-xl shadow-neon flex items-center gap-2 text-sm font-medium hover:scale-110 transition-transform duration-300 ${card.style} ${card.color}`}
+                  className={`absolute hidden z-10 backdrop-blur-2xl bg-white/80 text-[#1d1d1d] px-4 py-2 rounded-xl shadow-neon md:flex items-center gap-2 text-sm font-medium hover:scale-110 transition-transform duration-300 ${card.style}`}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 + i * 0.2, type: "spring", stiffness: 120 }}
@@ -138,7 +138,7 @@ const WhyAfrica = () => {
               {whyAfricaCards.map((_, i) => (
                 <div
                   key={i}
-                  className={`absolute w-8 h-8 hotspot bg-[#FF6B6B] rounded-full opacity-40 ${whyAfricaCards[i].style}`}
+                  className={`absolute  w-8 h-8 hotspot bg-[#FF6B6B] rounded-full opacity-40 ${whyAfricaCards[i].style}`}
                   style={{ transform: "translate(-50%, -50%)" }}
                 />
               ))}

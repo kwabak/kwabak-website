@@ -29,6 +29,33 @@ const CreativeExpression = () => {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
           }
+            @keyframes wave {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .wave-bg {
+      animation: wave 20s ease-in-out infinite;
+    }
+    .rotate-star {
+      animation: rotate 12s linear infinite;
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -500px 0; }
+      100% { background-position: 500px 0; }
+    }
+    .shimmer-text {
+      background: linear-gradient(90deg, #E86C4F, #F4A24C, #027A76);
+      background-size: 200% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
         `}
       </style>
 
@@ -42,7 +69,7 @@ const CreativeExpression = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
+          <h2 className="text-4xl text-left md:text-5xl font-extrabold leading-tight">
             Our Creative <span className="text-[#E86C4F]">Expression</span>
           </h2>
           <p className="text-lg md:text-xl text-[#1d1d1d]/80">
@@ -104,8 +131,8 @@ const CreativeExpression = () => {
 
       {/* Visual Language */}
       <div className="mt-24">
-        <h3 className="text-lg font-bold md:text-4xl text-[#1d1d1d]/80 col-span-3">The visual language</h3>
-        <p className="text-lg text-[#1d1d1d]/80 col-span-3 mb-8 mt-1">
+        <h3 className="text-3xl shimmer-text font-bold md:text-4xl text-[#1d1d1d]/80 col-span-3">The visual language</h3>
+        <p className="md:text-lg text-[#1d1d1d]/80 col-span-3 mb-8 mt-2">
           The visual language was designed with three key objectives
         </p>
 

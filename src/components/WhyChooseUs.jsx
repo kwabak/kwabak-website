@@ -34,13 +34,13 @@ const WhyChooseUs = () => {
   return (
     <motion.section
       ref={ref}
-      className="relative py-28 px-6 md:px-20 text-[#1d1d1d] overflow-hidden"
+      className="relative bg-white py-28 px-6 md:px-20 text-[#1d1d1d] overflow-hidden"
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : {}}
       transition={{ duration: 1 }}
     >
       {/* Floating glow sparkles */}
-      <div className="absolute right-0 top-0 w-[250px] h-full bg-gradient-to-l from-[#E86C4F]/10 to-transparent blur-[80px] animate-float pointer-events-none z-40"></div>
+      {/* <div className="absolute right-0 top-0 w-[250px] h-full bg-gradient-to-l from-[#E86C4F]/10 to-transparent blur-[80px] animate-float pointer-events-none z-40"></div> */}
 
       {/* Giant glowing bulb background */}
       {/* <Lightbulb

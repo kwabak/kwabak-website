@@ -105,7 +105,7 @@ const VisionAndValues = () => {
                 {visibleValues.map((value, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-start gap-4 p-4 bg-white/90 rounded-lg shadow-md border border-gray-200 hover:shadow-xl transition-transform transform hover:scale-105 duration-300 h-40 max-w-xs"
+                    className="flex items-start gap-4 p-4 bg-white/90 rounded-lg shadow-md border border-gray-200 hover:shadow-xl transition-transform transform hover:scale-105 duration-300 h-40 max-w-full"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                   >

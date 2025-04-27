@@ -48,11 +48,12 @@ const App = () => {
 
  
   return (
-    <main className="overflow-x-hidden bg-[#F2E5D3]">
+    <main className="overflow-x-hidden bg-[#fff]">
       <Navbar scrollToSection={scrollToSection} />
   
       {/* Home includes everything */}
       <div ref={homeRef}>
+<<<<<<< HEAD
       <HeroSection scrollToSection={scrollToSection} />
         {/* <HeroSection /> */}
         {/* <WhatWeDo />
@@ -65,6 +66,9 @@ const App = () => {
         <MeetTheTeam />
         <Careers />
         <ContactSection /> */}
+=======
+        <HeroSection />
+>>>>>>> 5a4d5e14658f98db45418883c92e2ff9f7dff949
       </div>
   
       {/* Also group individual refs for targeted scroll */}

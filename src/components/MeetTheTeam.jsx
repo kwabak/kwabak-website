@@ -35,7 +35,7 @@ const teamMembers = [
 
 const MeetTheTeam = () => {
   return (
-    <section className="relative bg-gradient-to-b from-white via-[#F2E5D3] to-[#E8DAC7] text-[#1d1d1d] py-28 px-6 md:px-20 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-white via-[#F2E5D3] to-[#fff] text-[#1d1d1d] py-28 px-6 md:px-20 overflow-hidden">
       <div className="max-w-7xl mx-auto text-center mb-20">
         <h2 className="text-4xl md:text-6xl font-extrabold mb-4">
           Meet the <span className="text-[#E86C4F]">Team</span>

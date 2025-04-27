@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Loader = () => {
   return (
-    <div className="fixed inset-0 bg-[#F2E5D3] flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-[#fff] flex items-center justify-center z-50">
       <motion.img
         src={logo}
         alt="Kwabak Logo"
