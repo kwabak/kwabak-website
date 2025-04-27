@@ -47,22 +47,12 @@ const App = () => {
   if (isLoading) return <Loader />;
 
   return (
-    <main className="overflow-x-hidden bg-[#F2E5D3]">
+    <main className="overflow-x-hidden bg-[#fff]">
       <Navbar scrollToSection={scrollToSection} />
   
       {/* Home includes everything */}
       <div ref={homeRef}>
         <HeroSection />
-        {/* <WhatWeDo />
-        <OurProcess />
-        <WhoWeAre />
-        <VisionAndValues />
-        <CreativeExpression />
-        <WhyAfrica />
-        <WhyChooseUs />
-        <MeetTheTeam />
-        <Careers />
-        <ContactSection /> */}
       </div>
   
       {/* Also group individual refs for targeted scroll */}
