@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
 import { Globe } from "lucide-react";
+import React, { useEffect } from "react";
 import TeamworkImage from "../assets/man-on-phone.jpg"; // Your uploaded image
 
 const Careers = () => {
@@ -42,10 +42,10 @@ const Careers = () => {
               With constant expansion, we’re always looking for bold, curious minds to join us.
             </p>
           </div>
-
+{/* 
           <button className="inline-block mt-6 px-6 py-3 bg-[#E86C4F] hover:bg-[#d8563f] text-white font-medium rounded-full shadow-lg transition duration-300">
             View Openings
-          </button>
+          </button> */}
         </div>
 
         {/* Image with Floating Cards */}

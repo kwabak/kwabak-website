@@ -1,7 +1,6 @@
+import { Mail, MapPin } from "lucide-react";
 import React from "react";
-import { FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa"; // Importing social media icons
-import LogoHuge from "../assets/logo-huge.png"; // Importing the logo image
-import Logo from "../assets/logo2.png"; // Adjust the path to your actual logo
+import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa"; // Importing social media icons
 
 
 
@@ -12,12 +11,33 @@ const Footer = () => {
 
       <div className="max-w-7xl mx-auto place-content-center grid md:grid-cols-1 gap-12">
         {/* Company Information */}
-        <div className="space-y-4">
+        {/* <div className="space-y-4">
           {/* <img src={Logo} alt="Kwabak Logo" className="w-[10rem] h-auto" /> */}
-          <p className=""> Location: C08 Manyo Close, Adabraka, Accra - Ghana</p>
+          {/* <p className=""> Location: C08 Manyo Close, Adabraka, Accra - Ghana</p>
           <span className="">Email:</span> 
           <a href="mailto:hello@kwabak.com" className="text-[#E86C4F] hover:text-[#d8563f] cursor-pointor">hello@kwabak.com</a>
-        </div>
+        </div> */} 
+        <div className="space-y-4">
+    {/* <img src={Logo} alt="Kwabak Logo" className="w-[10rem] h-auto" /> */}
+
+    {/* Location */}
+    <div className="flex items-center space-x-2">
+      <MapPin size={20} color="#E86C4F" /> {/* Location icon */}
+      <p className="">C08 Manyo Close, Adabraka, Accra - Ghana</p>
+    </div>
+
+    {/* Email */}
+    <div className="flex items-center space-x-2">
+      <Mail size={20} color="white" /> {/* Email icon */}
+      {/* <span>Email:</span> */}
+      <a
+        href="mailto:hello@kwabak.com"
+        className="text-[#E86C4F] hover:text-[#d8563f] cursor-pointer"
+      >
+        hello@kwabak.com
+      </a>
+      </div>
+    </div>
 
         {/* Footer Tagline */}
         <div className="space-y-4 text-left">
