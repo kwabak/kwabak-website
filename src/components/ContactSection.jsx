@@ -40,7 +40,7 @@ const ContactSection = () => {
 
     const form = e.target;
     const formData = new FormData(form);
-    const formSpreeEndpoint = import.meta.env.FORMSPREE_ENDPOINT; // Replace with your Formspree endpoint
+    const formSpreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT; // Replace with your Formspree endpoint
     try {
       const response = await fetch(formSpreeEndpoint, {
         method: "POST",
@@ -129,7 +129,8 @@ const ContactSection = () => {
     );
   }, []);
 
-  const siteKey = import.meta.env.RECAPTCHA_SITE_KEY; // Replace with your reCAPTCHA site key
+  const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY; // Replace with your reCAPTCHA site key
+  
 
   return (
     <section
