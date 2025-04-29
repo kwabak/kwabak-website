@@ -32,7 +32,7 @@ const App = () => {
       Services: servicesRef,
       Contact: contactRef,
       "Logo Story": brandRef,
-      Career: careerRef,
+      Careers: careerRef,
     };
     sections[section]?.current?.scrollIntoView({ behavior: "smooth" });
   };
