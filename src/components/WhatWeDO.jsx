@@ -88,6 +88,7 @@ const WhatWeDo = () => {
         onClose={() => setSelectedService(null)}
         title={selectedService?.title}
         content={selectedService?.details}
+        showContactButton={true}
       />
 
     </section>

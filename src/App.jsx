@@ -52,8 +52,9 @@ const App = () => {
   
       {/* Home includes everything */}
       <div ref={homeRef}>
-      <HeroSection scrollToSection={scrollToSection} />
-        {/* <HeroSection /> */}
+
+        <HeroSection scrollToSection={scrollToSection} />
+        
       </div>
   
       {/* Also group individual refs for targeted scroll */}
