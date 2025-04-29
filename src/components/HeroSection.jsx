@@ -102,26 +102,26 @@
 // export default HeroSection;
 
 import { motion } from "framer-motion";
-import { FaArrowDown, FaBolt, FaCode, FaCogs, FaRocket } from "react-icons/fa";
+import { FaArrowDown } from "react-icons/fa";
 import GroupImage from "../assets/people-raise-hands.jpg";
 
 const glassCards = [
-  {
-    icon: <FaCode className="text-[#E86C4F] text-xl" />,
-    text: "Smart Apps"
-  },
-  {
-    icon: <FaRocket className="text-[#027A76] text-xl" />,
-    text: "Scale Fast"
-  },
-  {
-    icon: <FaCogs className="text-[#027A76] text-xl" />,
-    text: "Innovate"
-  },
-  {
-    icon: <FaBolt className="text-[#F4A24C] text-xl" />,
-    text: "Tech Spark"
-  }
+  // {
+  //   icon: <FaCode className="text-[#E86C4F] text-xl" />,
+  //   text: "Smart Apps"
+  // },
+  // {
+  //   icon: <FaRocket className="text-[#027A76] text-xl" />,
+  //   text: "Scale Fast"
+  // },
+  // {
+  //   icon: <FaCogs className="text-[#027A76] text-xl" />,
+  //   text: "Innovate"
+  // },
+  // {
+  //   icon: <FaBolt className="text-[#F4A24C] text-xl" />,
+  //   text: "Tech Spark"
+  // }
 ];
 
 // 👉 Accept scrollToSection as a prop

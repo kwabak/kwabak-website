@@ -1,13 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Logo from "../assets/logo2.png";
 
 const Navbar = ({ scrollToSection }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const navLinks = ["Home", "About", "Services", "Brand", "Career"];
+  const navLinks = ["Home", "About", "Services", "Logo Story", "Career"];
 
   useEffect(() => {
     const handleScroll = () => {

@@ -31,7 +31,7 @@ const App = () => {
       About: aboutRef,
       Services: servicesRef,
       Contact: contactRef,
-      Brand: brandRef,
+      "Logo Story": brandRef,
       Career: careerRef,
     };
     sections[section]?.current?.scrollIntoView({ behavior: "smooth" });
@@ -53,7 +53,6 @@ const App = () => {
   
       {/* Home includes everything */}
       <div ref={homeRef}>
-<<<<<<< HEAD
       <HeroSection scrollToSection={scrollToSection} />
         {/* <HeroSection /> */}
         {/* <WhatWeDo />
@@ -66,9 +65,7 @@ const App = () => {
         <MeetTheTeam />
         <Careers />
         <ContactSection /> */}
-=======
-        <HeroSection />
->>>>>>> 5a4d5e14658f98db45418883c92e2ff9f7dff949
+        {/* <HeroSection /> */}
       </div>
   
       {/* Also group individual refs for targeted scroll */}
