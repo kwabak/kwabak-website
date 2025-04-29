@@ -58,6 +58,15 @@ const ContactSection = () => {
         if (recaptchaRef.current) {
           recaptchaRef.current.reset();
         }
+        // Scroll to the success message
+        gsap.to(window, {
+          scrollTo: {
+            y: formRef.current,
+            offsetY: 50,
+          },
+          duration: 1,
+          ease: "power3.inOut",
+        });
       } else {
         const errorData = await response.json();
         setError(`Failed to send message: ${errorData.error || "Unknown error"}`);
@@ -167,8 +176,14 @@ const ContactSection = () => {
         {/* Form */}
         <div className="flex justify-center" ref={formRef}>
           {submitted ? (
-            <div className="text-white bg-green-600 p-4 rounded-lg shadow-lg">
-              🎉 Thank you! Your message has been sent.
+            <div className="text-white bg-green-600 p-6 rounded-lg shadow-lg text-center space-y-2">
+              <h3 className="text-xl font-semibold">Thank You for Contacting Kwabak!</h3>
+              <p className="text-sm">
+                The response to your message will be sent to the email address you’ve indicated within 24 hours.
+              </p>
+              <p className="text-sm">
+                Have a wonderful day! We look forward to being part of your success story!
+              </p>
             </div>
           ) : (
             <form
@@ -233,24 +248,19 @@ const ContactSection = () => {
                     .react-tel-input .flag-dropdown {
                       border: 1px solid #DBAE8D !important;
                       border-radius: 0.5rem 0 0 0.5rem !important;
-                      
-                      
                     }
-                  
                     .react-tel-input .flag-dropdown .selected-flag {
-                      
-                      padding-right:0.3rem;
-
+                      padding-right: 0.3rem;
                     }
-                      .react-tel-input .selected-flag .arrow {
-                        border-top: 4px solid #fff;
-                      }
-                      .react-tel-input .flag-dropdown:hover .selected-flag .arrow {
-                        border-top: 4px solid #555;
-                      }
-                      .react-tel-input .selected-flag .arrow.up{
-                        display: none;
-                      }
+                    .react-tel-input .selected-flag .arrow {
+                      border-top: 4px solid #fff;
+                    }
+                    .react-tel-input .flag-dropdown:hover .selected-flag .arrow {
+                      border-top: 4px solid #555;
+                    }
+                    .react-tel-input .selected-flag .arrow.up {
+                      display: none;
+                    }
                   `}
                 </style>
                 <input type="hidden" name="phone" value={phone} />
