@@ -1,20 +1,21 @@
-import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import Tilt from "react-parallax-tilt";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import africaMap from "../assets/hero.png"; // New African map illustration
+import React, { useEffect } from "react";
 import { GiAfrica } from "react-icons/gi";
+import Tilt from "react-parallax-tilt";
+import africaMap from "../assets/hero.png"; // New African map illustration
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
 const whyAfricaCards = [
-  { text: "1B+ Population", style: "top-[20%] left-[15%]", color: "text-[#fff]" },
-  { text: "Fastest Growing Economy", style: "bottom-[25%] right-[10%]", color: "text-[#00F5D4]" },
-  { text: "Tech Innovation Hub", style: "top-[40%] right-[5%]", color: "text-[#fff]" },
-  { text: "Young Workforce", style: "bottom-[40%] left-[25%]", color: "text-[#1d1d1d]" },
+  { text: "Untapped Market Potential", style: "top-[20%] left-[15%]", color: "text-[#fff]" },
+  { text: "Youthful Population", style: "bottom-[25%] right-[10%]", color: "text-[#00F5D4]" },
+  { text: "Digital Transformation Gap", style: "top-[40%] right-[5%]", color: "text-[#fff]" },
+  { text: "Cross-Border Expansion", style: "bottom-[40%] left-[25%]", color: "text-[#1d1d1d]" },
+  { text: "Financing Gap", style: "top-[40%] left-[10%]", color: "text-[#1d1d1d]" },
 ];
 
 const WhyAfrica = () => {

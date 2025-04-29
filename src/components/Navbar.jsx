@@ -7,7 +7,7 @@ const Navbar = ({ scrollToSection }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const navLinks = ["Home", "About", "Services", "Logo Story", "Career"];
+  const navLinks = ["Home", "About", "Services", "Logo Story", "Careers"];
 
   useEffect(() => {
     const handleScroll = () => {
