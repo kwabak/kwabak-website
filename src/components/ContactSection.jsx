@@ -14,33 +14,19 @@ if (typeof window !== "undefined") {
 const ContactSection = () => {
   const [phone, setPhone] = useState("+233");
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [recaptchaValue, setRecaptchaValue] = useState(null);
   const [error, setError] = useState("");
-  const [selectedFile, setSelectedFile] = useState(null);
   const recaptchaRef = useRef(null);
-  const fileInputRef = useRef(null);
   const formRef = useRef(null);
-  const firstNameInputRef = useRef(null); // Ref for the first input
-
-  // Dynamically load SMTP.js
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://smtpjs.com/v3/smtp.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+  const firstNameInputRef = useRef(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
+    // Prevent submission if reCAPTCHA is not completed
     if (!recaptchaValue) {
       setError("Please verify you're not a robot.");
-      // scroll to error
       gsap.to(window, {
         scrollTo: {
           y: formRef.current,
@@ -54,140 +40,38 @@ const ContactSection = () => {
 
     const form = e.target;
     const formData = new FormData(form);
-    const firstName = formData.get("firstName");
-    const lastName = formData.get("lastName");
-    const email = formData.get("email");
-    const phone = formData.get("phone");
-    const message = formData.get("message");
-    const file = selectedFile;
-
-    // Validate file size (max 10MB) and presence
-    if (file && file.size > 10 * 1024 * 1024) {
-      setError("File size exceeds 10MB limit.");
-      // scroll to error
-      gsap.to(window, {
-        scrollTo: {
-          y: formRef.current,
-          offsetY: 50,
-        },
-        duration: 1,
-        ease: "power3.inOut",
-      });
-      return;
-    }
-    if (file && (!file.name || file.size === 0)) {
-      setError("Invalid file selected. Please choose a valid file.");
-      // scroll to error
-      gsap.to(window, {
-        scrollTo: {
-          y: formRef.current,
-          offsetY: 50,
-        },
-        duration: 1,
-        ease: "power3.inOut",
-      });
-      return;
-    }
-
-    setLoading(true);
-
+    const formSpreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT; // Replace with your Formspree endpoint
     try {
-      // Convert file to base64 if present
-      let attachment = null;
-      if (file && file.name) {
-        attachment = await new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.onload = () => {
-            const base64 = reader.result.split(",")[1];
-            if (!base64) {
-              reject(new Error("Failed to convert file to base64."));
-            }
-            resolve({
-              name: file.name,
-              data: base64,
-            });
-          };
-          reader.onerror = () => reject(new Error("Error reading file."));
-          reader.readAsDataURL(file);
-        });
-        console.log("Attachment prepared:", attachment);
-      }
-
-      // Prepare email body with professional HTML
-      const emailBody = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <style>
-            body { font-family: Arial, sans-serif; color: #333; }
-            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-            h2 { color: #E86C4F; }
-            p { margin: 10px 0; }
-            .label { font-weight: bold; }
-          </style>
-        </head>
-        <body>
-          <div class="container">
-            <h2>New Contact Form Submission</h2>
-            <p><span class="label">First Name:</span> ${firstName}</p>
-            <p><span class="label">Last Name:</span> ${lastName}</p>
-            <p><span class="label">Email:</span> ${email}</p>
-            <p><span class="label">Phone:</span> ${phone}</p>
-            <p><span class="label">Message:</span> ${message}</p>
-          </div>
-        </body>
-        </html>
-      `;
-
-      // Send email using SMTP.js
-      const emailConfig = {
-        Host: "smtp.elasticemail.com",
-        Username: "dansoderrick80@gmail.com",
-        Password: "19D6B0EC97B8B276B9A8B7739A180F599C87",
-        Port: 2525,
-        To: "dansoderrick80@gmail.com",
-        From: "dansoderrick80@gmail.com",
-        ReplyTo: email,
-        Subject: "New Contact Form Submission",
-        Body: emailBody,
-      };
-
-      if (attachment) {
-        emailConfig.Attachments = [attachment];
-      }
-
-      console.log("Email config (without Password):", {
-        ...emailConfig,
-        Password: "[REDACTED]",
+      const response = await fetch(formSpreeEndpoint, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
       });
-      const result = await window.Email.send(emailConfig);
-      console.log("Email result:", result);
 
-      if (result === "OK") {
+      if (response.ok) {
         setSubmitted(true);
         form.reset();
         setPhone("+233");
         setRecaptchaValue(null);
-        setSelectedFile(null);
         if (recaptchaRef.current) {
           recaptchaRef.current.reset();
         }
       } else {
-        setError(`Failed to send email. Server response: ${result}`);
-        // scroll to error
-      gsap.to(window, {
-        scrollTo: {
-          y: formRef.current,
-          offsetY: 50,
-        },
-        duration: 1,
-        ease: "power3.inOut",
-      });
+        const errorData = await response.json();
+        setError(`Failed to send message: ${errorData.error || "Unknown error"}`);
+        gsap.to(window, {
+          scrollTo: {
+            y: formRef.current,
+            offsetY: 50,
+          },
+          duration: 1,
+          ease: "power3.inOut",
+        });
       }
     } catch (err) {
-      console.error("Submission error:", err);
-      setError(`An error occurred while sending the email: ${err.message}`);
-      // scroll to error
+      setError(`An error occurred: ${err.message}`);
       gsap.to(window, {
         scrollTo: {
           y: formRef.current,
@@ -197,31 +81,11 @@ const ContactSection = () => {
         ease: "power3.inOut",
       });
     }
-
-    setLoading(false);
-  };
-
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setSelectedFile(file || null);
-    console.log("File selected:", file);
-  };
-
-  const removeFile = () => {
-    setSelectedFile(null);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
-    }
-  };
-
-  const triggerFileInput = () => {
-    fileInputRef.current.click();
   };
 
   // Handle "Share Your Thoughts" button click
   const handleShareThoughts = () => {
     if (formRef.current) {
-      // Scroll to the form
       gsap.to(window, {
         scrollTo: {
           y: formRef.current,
@@ -230,14 +94,12 @@ const ContactSection = () => {
         duration: 1,
         ease: "power3.inOut",
         onComplete: () => {
-          // Focus the first input after scrolling
           if (firstNameInputRef.current) {
             firstNameInputRef.current.focus();
           }
         },
       });
 
-      // Animate the form to draw focus
       gsap.to(formRef.current, {
         scale: 1.02,
         boxShadow: "0 0 20px rgba(232, 108, 79, 0.8)",
@@ -267,7 +129,8 @@ const ContactSection = () => {
     );
   }, []);
 
-  const siteKey = "6LeLdyMrAAAAAGUAFSa8qwKSUzdZCvY726vkVdLT";
+  const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY; // Replace with your reCAPTCHA site key
+  
 
   return (
     <section
@@ -310,8 +173,6 @@ const ContactSection = () => {
           ) : (
             <form
               className="w-full max-w-md bg-white/20 backdrop-blur-xl p-8 rounded-xl shadow-lg space-y-6 border border-white/30"
-              method="POST"
-              encType="multipart/form-data"
               onSubmit={handleSubmit}
             >
               {error && (
@@ -326,7 +187,7 @@ const ContactSection = () => {
                   placeholder="First name"
                   className="w-1/2 p-3 rounded-lg border border-[#DBAE8D] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-[#E86C4F]"
                   required
-                  ref={firstNameInputRef} // Added ref to the first input
+                  ref={firstNameInputRef}
                 />
                 <input
                   type="text"
@@ -419,8 +280,8 @@ const ContactSection = () => {
                   <div className="flex items-center space-x-4">
                     <button
                       type="button"
-                      onClick={triggerFileInput}
-                      className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-xl border border-[#DBAE8D] text-white rounded-lg hover:bg-[#E86C4F] hover:border-[#E86C4F] cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#E86C4F] transition duration-300"
+                      disabled
+                      className="flex items-center px-4 py-2 bg-white/10 backdrop-blur-xl border border-[#DBAE8D] text-white/60 rounded-lg cursor-not-allowed transition duration-300"
                     >
                       <svg
                         className="w-5 h-5 mr-2"
@@ -442,38 +303,14 @@ const ContactSection = () => {
                       type="file"
                       name="attachment"
                       accept=".png,.jpg,.jpeg,.pdf,.doc,.docx"
-                      ref={fileInputRef}
-                      onChange={handleFileChange}
+                      disabled
                       className="hidden"
                     />
                   </div>
-                  {selectedFile && (
-                    <div className="flex items-center bg-white/10 backdrop-blur-md p-2 rounded-lg border border-[#DBAE8D]">
-                      <span className="text-white text-sm truncate flex-1">{selectedFile.name}</span>
-                      <button
-                        type="button"
-                        onClick={removeFile}
-                        className="ml-2 p-1 text-white hover:text-[#E86C4F] focus:outline-none cursor-pointer"
-                      >
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                  )}
                 </div>
-                <p className="text-sm text-white/60 mt-1">Supported formats: JPG, PNG, PDF, DOC, DOCX (max 10MB)</p>
+                <p className="text-sm text-white/60 mt-1">
+                  File uploads are not supported in this version. Contact us directly for file submissions.
+                </p>
               </div>
 
               <div className="flex justify-center">
@@ -493,12 +330,9 @@ const ContactSection = () => {
 
               <button
                 type="submit"
-                disabled={loading}
-                className={`w-full py-3 bg-[#E86C4F] hover:bg-[#d8563f] text-white font-medium rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ${
-                  loading ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
-                }`}
+                className="w-full py-3 bg-[#E86C4F] hover:bg-[#d8563f] text-white font-medium rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer"
               >
-                {loading ? "Sending..." : "Send Message"}
+                Send Message
               </button>
             </form>
           )}

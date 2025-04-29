@@ -28,17 +28,6 @@ const Careers = () => {
             </p>
           </div>
 
-          <div className="space-y-4 text-[#1d1d1d]/80 text-lg">
-            <p>
-              <span className="text-[#027A76] font-semibold">Hands-on learning:</span> Experience meets mentorship to fuel real growth.
-            </p>
-            <p>
-              <span className="text-yellow-600 font-semibold">Remote-first setup:</span> Work wherever you do your best — we’re built for flexibility.
-            </p>
-            <p>
-              With constant expansion, we’re always looking for bold, curious minds to join us.
-            </p>
-          </div>
 {/* 
           <button className="inline-block mt-6 px-6 py-3 bg-[#E86C4F] hover:bg-[#d8563f] text-white font-medium rounded-full shadow-lg transition duration-300">
             View Openings
