@@ -177,7 +177,7 @@ const ContactSection = () => {
         <div className="flex justify-center" ref={formRef}>
           {submitted ? (
             <div className="text-white bg-green-600 p-6 rounded-lg shadow-lg text-center space-y-2">
-              <h3 className="text-xl font-semibold">Thank You for Contacting Kwabak!</h3>
+              <h3 className="text-xl font-semibold">🎉 Thank You for Contacting Kwabak!</h3>
               <p className="text-sm">
                 The response to your message will be sent to the email address you’ve indicated within 24 hours.
               </p>

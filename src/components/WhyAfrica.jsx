@@ -11,11 +11,11 @@ if (typeof window !== "undefined") {
 }
 
 const whyAfricaCards = [
-  { text: "Untapped Market Potential", style: "top-[20%] left-[15%]", color: "text-[#fff]" },
-  { text: "Youthful Population", style: "bottom-[25%] right-[10%]", color: "text-[#00F5D4]" },
-  { text: "Digital Transformation Gap", style: "top-[40%] right-[5%]", color: "text-[#fff]" },
-  { text: "Cross-Border Expansion", style: "bottom-[40%] left-[25%]", color: "text-[#1d1d1d]" },
-  { text: "Financing Gap", style: "top-[40%] left-[10%]", color: "text-[#1d1d1d]" },
+  { text: "Untapped Market Potential", style: "top-[20%] left-[15%] sm:top-[20%] sm:left-[15%]", color: "text-[#fff]" },
+  { text: "Youthful Population", style: "bottom-[25%] right-[10%] sm:bottom-[25%] sm:right-[10%]", color: "text-[#00F5D4]" },
+  { text: "Digital Transformation Gap", style: "top-[40%] right-[5%] sm:top-[40%] sm:right-[5%]", color: "text-[#fff]" },
+  { text: "Cross-Border Expansion", style: "bottom-[40%] left-[25%] sm:bottom-[40%] sm:left-[25%]", color: "text-[#1d1d1d]" },
+  { text: "Financing Gap", style: "top-[40%] left-[10%] sm:top-[40%] sm:left-[10%]", color: "text-[#1d1d1d]" },
 ];
 
 const WhyAfrica = () => {
@@ -87,20 +87,15 @@ const WhyAfrica = () => {
             Why <span className="text-[#E86C4F]">Africa?</span>
           </h2>
           <p className="text-lg text-gray-900/90 font-light">
-          Africa is a rich land with potential, and at Kwabak, we are dedicated to unlocking it. We believe in the ingenuity and resilience of African entrepreneurs, who often create innovative solutions from limited resources. Our mission is to amplify that creativity by providing tailored technology and strategic insights.
-
-          <br />
-          <br />
-          The continent is undergoing a rapid digital transformation, presenting unique opportunities for SMEs to embrace new business models. At Kwabak, we guide companies in navigating this evolution, turning challenges into competitive advantages. 
-
-          <br />
-          <br />
-          From the bakery in Accra to the tech startup in Nairobi, from Johannesburg's legal firms to Lagos fashion houses and from Kigali's logistics companies to Cairo's healthcare providers, we are committed to driving growth across diverse sectors. Together, we are shaping a brighter future for Africa—one where businesses thrive, communities flourish, and opportunities abound. Join us in this transformative journey.
+            Africa is a rich land with potential, and at Kwabak, we are dedicated to unlocking it. We believe in the ingenuity and resilience of African entrepreneurs, who often create innovative solutions from limited resources. Our mission is to amplify that creativity by providing tailored technology and strategic insights.
+            <br />
+            <br />
+            The continent is undergoing a rapid digital transformation, presenting unique opportunities for SMEs to embrace new business models. At Kwabak, we guide companies in navigating this evolution, turning challenges into competitive advantages.
+            <br />
+            <br />
+            From the bakery in Accra to the tech startup in Nairobi, from Johannesburg's legal firms to Lagos fashion houses and from Kigali's logistics companies to Cairo's healthcare providers, we are committed to driving growth across diverse sectors. Together, we are shaping a brighter future for Africa—one where businesses thrive, communities flourish, and opportunities abound. Join us in this transformative journey.
           </p>
-          <motion.div
-            className="flex items-center gap-4 mt-6"
-            
-          >
+          <motion.div className="flex items-center gap-4 mt-6">
             <GiAfrica className="text-[#FF6B6B] text-4xl" />
             <p className="font-semibold text-gray-700/90">
               Join us in shaping Africa's digital landscape.
@@ -126,7 +121,7 @@ const WhyAfrica = () => {
               {whyAfricaCards.map((card, i) => (
                 <motion.div
                   key={i}
-                  className={`absolute hidden z-10 backdrop-blur-2xl bg-white/80 text-[#1d1d1d] px-4 py-2 rounded-xl shadow-neon md:flex items-center gap-2 text-sm font-medium hover:scale-110 transition-transform duration-300 ${card.style}`}
+                  className={`absolute z-10 backdrop-blur-2xl bg-white/80 text-[#1d1d1d] px-2 py-1 sm:px-4 sm:py-2 rounded-xl shadow-neon flex items-center gap-2 text-xs sm:text-sm font-medium hover:scale-110 transition-transform duration-300 ${card.style}`}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 + i * 0.2, type: "spring", stiffness: 120 }}
@@ -139,7 +134,7 @@ const WhyAfrica = () => {
               {whyAfricaCards.map((_, i) => (
                 <div
                   key={i}
-                  className={`absolute  w-8 h-8 hotspot bg-[#FF6B6B] rounded-full opacity-40 ${whyAfricaCards[i].style}`}
+                  className={`absolute w-6 h-6 sm:w-8 sm:h-8 hotspot bg-[#FF6B6B] rounded-full opacity-40 ${whyAfricaCards[i].style}`}
                   style={{ transform: "translate(-50%, -50%)" }}
                 />
               ))}
