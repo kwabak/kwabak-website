@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import backgroundImage from "../assets/greet.jpg";
 import { X } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import backgroundImage from "../assets/greet.jpg";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -84,7 +84,7 @@ const WhoWeAre = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              See More About Us
+              Read More
             </motion.button>
           </div>
         </motion.div>
@@ -136,7 +136,7 @@ const WhoWeAre = () => {
               `}
             </style>
             <div className="custom-scrollbar">
-              <h3 className="text-3xl font-bold mb-6 text-center text-[#1d1d1d]">More About Us</h3>
+              <h3 className="text-3xl font-bold mb-6 text-center text-[#1d1d1d]"> About Us</h3>
               <p className="text-base leading-7 mb-6">
                 At Kwabak, we're serious about success but never at the expense of enjoying the journey. Our remote-first setup gives us something special: freedom. Freedom to recruit exceptional talent regardless of borders, to work when we're at our best, and to create solutions from diverse perspectives. 
                 We champion simplicity in everything we do. For our clients, this means practical solutions to complex problems without unnecessary complications. Internally, it guides how we communicate, collaborate, and solve problems as a team.
