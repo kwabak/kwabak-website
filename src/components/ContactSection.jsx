@@ -130,7 +130,6 @@ const ContactSection = () => {
   }, []);
 
   const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY; // Replace with your reCAPTCHA site key
-  
 
   return (
     <section
@@ -210,17 +209,48 @@ const ContactSection = () => {
               <div>
                 <style>
                   {`
-                    .react-tel-input .country-list .country:hover {
-                      background-color: rgba(255, 255, 255, 0.3);
-                      backdrop-filter: blur(8px);
+                    .react-tel-input .country-list {
+                      background-color: white !important; /* White background for dropdown */
+                      color: black !important; /* Black text for dropdown items */
+                      border: 1px solid #DBAE8D !important;
+                      border-radius: 0.5rem !important;
                     }
-                    .react-tel-input .country-list .country .dial-code {
-                      color: white;
+                    .react-tel-input .country-list .country {
+                      color: black !important; /* Black text for each country */
+                    }
+                    .react-tel-input .country-list .country:hover {
+                      background-color: #e5e7eb !important; /* Gray background on hover (gray-200) */
                     }
                     .react-tel-input .country-list .country.highlight {
-                      background-color: rgba(255, 255, 255, 0.25);
-                      backdrop-filter: blur(8px);
+                      background-color: #d1d5db !important; /* Gray background for selected country (gray-300) */
+                      color: black !important;
+                      font-family: "Quicksand, sans-serif";
                     }
+                    .react-tel-input .country-list .country .dial-code {
+                      color: black !important; /* Black text for dial codes */
+                      font-family: "Quicksand, sans-serif";
+                    }
+                    .react-tel-input .flag-dropdown {
+                      border: 1px solid #DBAE8D !important;
+                      border-radius: 0.5rem 0 0 0.5rem !important;
+                      
+                      
+                    }
+                  
+                    .react-tel-input .flag-dropdown .selected-flag {
+                      
+                      padding-right:0.3rem;
+
+                    }
+                      .react-tel-input .selected-flag .arrow {
+                        border-top: 4px solid #fff;
+                      }
+                      .react-tel-input .flag-dropdown:hover .selected-flag .arrow {
+                        border-top: 4px solid #555;
+                      }
+                      .react-tel-input .selected-flag .arrow.up{
+                        display: none;
+                      }
                   `}
                 </style>
                 <input type="hidden" name="phone" value={phone} />
@@ -244,13 +274,10 @@ const ContactSection = () => {
                     border: "1px solid #DBAE8D",
                     borderRight: "none",
                     borderRadius: "0.5rem 0 0 0.5rem",
-                    padding: "0.75rem",
                     cursor: "pointer",
                   }}
                   dropdownStyle={{
-                    backgroundColor: "rgba(255, 255, 255, 0.2)",
-                    backdropFilter: "blur(10px)",
-                    color: "white",
+                    backgroundColor: "white", // White background for dropdown container
                     borderRadius: "0.5rem",
                     border: "1px solid #DBAE8D",
                   }}
@@ -274,45 +301,6 @@ const ContactSection = () => {
                 rows="5"
                 required
               />
-
-              <div>
-                <label className="block text-white text-sm mb-2">Attach file (optional)</label>
-                <div className="flex gap-1 items-center">
-                  <div className="flex items-center space-x-4">
-                    <button
-                      type="button"
-                      disabled
-                      className="flex items-center px-4 py-2 bg-white/10 backdrop-blur-xl border border-[#DBAE8D] text-white/60 rounded-lg cursor-not-allowed transition duration-300"
-                    >
-                      <svg
-                        className="w-5 h-5 mr-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M15.172 7l-6.586 6.586a2 2 0 002.828 2.828l6.586-6.586a4 4 0 00-5.656-5.656l-6.586 6.586a6 6 0 008.485 8.485l6.586-6.586"
-                        />
-                      </svg>
-                      Attach File
-                    </button>
-                    <input
-                      type="file"
-                      name="attachment"
-                      accept=".png,.jpg,.jpeg,.pdf,.doc,.docx"
-                      disabled
-                      className="hidden"
-                    />
-                  </div>
-                </div>
-                <p className="text-sm text-white/60 mt-1">
-                  File uploads are not supported in this version. Contact us directly for file submissions.
-                </p>
-              </div>
 
               <div className="flex justify-center">
                 {siteKey ? (
