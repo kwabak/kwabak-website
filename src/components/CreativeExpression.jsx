@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
+import { PiStarFourFill } from "react-icons/pi";
 
 const CreativeExpression = () => {
   const cardVariants = {
@@ -31,6 +32,21 @@ const CreativeExpression = () => {
               background: none;
               color: #E86C4F; /* Ensure text is readable without animation */
             }
+          }
+          @keyframes wave {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+          .wave-bg {
+            animation: wave 20s ease-in-out infinite;
+          }
+          .rotate-star {
+            animation: rotate 12s linear infinite;
+          }
+          @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
           }
         `}
       </style>
@@ -114,9 +130,12 @@ const CreativeExpression = () => {
       {/* Visual Language */}
       <div className="mt-24">
         <h3 className="text-3xl shimmer-text font-bold md:text-4xl text-[#1d1d1d]/80 col-span-3">Visual Language</h3>
+        <p className="text-lg md:text-xl text-[#1d1d1d]/80 mt-2 ">
+          The visual Language of kwabak was designed with three key objectives:
+        </p>
 
         <motion.div 
-          className="mt-4 grid md:grid-cols-3 gap-10 text-left relative z-10"
+          className="mt-6 grid md:grid-cols-3 gap-10 text-left relative z-10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
@@ -126,14 +145,17 @@ const CreativeExpression = () => {
             {
               
               description: "Establish immediate recognition in competitive markets.",
+              color: "text-[#E86C4F]",
             },
             {
              
               description: "Communicate our dual strength in technology and strategy.",
+              color: "text-[#F4A24C]",
             },
             {
               
               description: "Signal our deep understanding of the African business landscape.",
+              color: "text-[#027A76]",
             },
           ].map((item, index) => (
             <motion.div
@@ -143,7 +165,8 @@ const CreativeExpression = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-            >
+            > 
+              <PiStarFourFill className={`${item.color} text-2xl rotate-star`} />
               <div>
                 
                 <p className="text-[#1d1d1d]/70 text-lg">{item.description}</p>

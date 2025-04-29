@@ -141,10 +141,10 @@ const WhoWeAre = () => {
                 At Kwabak, we're serious about success but never at the expense of enjoying the journey. Our remote-first setup gives us something special: freedom. Freedom to recruit exceptional talent regardless of borders, to work when we're at our best, and to create solutions from diverse perspectives. 
                 We champion simplicity in everything we do. For our clients, this means practical solutions to complex problems without unnecessary complications. Internally, it guides how we communicate, collaborate, and solve problems as a team.
               </p>
-              <p className="text-base leading-7">
+              <p className="text-base leading-7 mb-6">
                 Feedback drives our growth. We actively seek input from clients to refine our solutions and ensure they deliver real impact. Within our team, we've created a culture where constructive feedback flows freely, helping us continuously improve and innovate.
               </p>
-              <p className="text-base leading-7">
+              <p className="text-base leading-7 mb-6">
                 We believe that small victories fuel big transformations. We don't wait for yearly reviews to acknowledge progress—we celebrate breakthroughs as they happen, creating momentum that drives our mission forward.
               </p>
               <p className="text-base leading-7">

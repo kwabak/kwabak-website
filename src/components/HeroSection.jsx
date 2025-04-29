@@ -185,16 +185,6 @@ const HeroSection = ({ scrollToSection }) => {
           ))}
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute hidden md:block bottom-6 left-1/2 transform -translate-x-1/2 text-[#1d1d1d]/60 text-sm z-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-      >
-        <FaArrowDown className="animate-bounce text-xl" />
-      </motion.div>
     </section>
   );
 };
