@@ -63,7 +63,7 @@ const Footer = () => {
       </div>
 
       <div className="mt-8 text-center text-sm">
-        <p>© {new Date().getFullYear()} Kwabak. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Kwabak Technologies Ltd. All rights reserved.</p>
       </div>
 
       {/* Modal */}
