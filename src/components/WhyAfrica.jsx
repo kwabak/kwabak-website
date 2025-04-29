@@ -98,7 +98,7 @@ const WhyAfrica = () => {
           </p>
           <motion.div
             className="flex items-center gap-4 mt-6"
-            whileHover={{ scale: 1.05 }}
+            
           >
             <GiAfrica className="text-[#FF6B6B] text-4xl" />
             <p className="font-semibold text-gray-700/90">

@@ -11,25 +11,23 @@ const teamMembers = [
     name: "Ama K.",
     title: "Founder & CEO",
     image: Image4,
-    bio: "Visionary leader passionate about African innovation and sustainable impact.",
+
   },
   {
     name: "Kwame B.",
     title: "CTO",
     image: Image2,
-    bio: "Tech wizard building scalable systems with purpose.",
   },
   {
     name: "Mark D.",
     title: "Product Designer",
     image: Image3,
-    bio: "Designs user-first experiences rooted in culture and clarity.",
   },
   {
     name: "James M.",
     title: "Growth Lead",
     image: Image1,
-    bio: "Connecting solutions to people, communities, and markets.",
+    
   },
 ];
 
@@ -75,9 +73,7 @@ const MeetTheTeam = () => {
                   {member.name}
                 </h3>
                 <p className="text-[#027A76] font-medium uppercase tracking-wide text-sm">{member.title}</p>
-                <p className="text-[#1d1d1d]/70 text-sm leading-relaxed">
-                  {member.bio}
-                </p>
+                
               </div>
             </Tilt>
           </motion.div>

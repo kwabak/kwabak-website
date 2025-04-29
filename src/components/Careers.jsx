@@ -42,22 +42,6 @@ const Careers = () => {
               alt="Team Collaboration"
               className="w-full h-full object-cover rounded-3xl"
             />
-
-            {/* Top-Left Floating Card */}
-            <div className="absolute top-[-75px] -left-4 md:top-[-30px] md:left-[-60px] bg-white/80 backdrop-blur-md p-3 md:p-5 rounded-xl shadow-lg w-10/12 md:max-w-xs z-10">
-              <p className="text-lg font-bold text-[#027A76] mb-1">Impact-Focused</p>
-              <p className="text-[#1d1d1d] text-sm">
-                From ideation to execution — every contribution counts.
-              </p>
-            </div>
-
-            {/* Bottom-Right Floating Card */}
-            <div className="absolute bottom-[-75px] -right-4 md:bottom-[-30px] md:right-[-60px] bg-white/80 backdrop-blur-md p-3 md:p-5 rounded-xl shadow-lg w-10/12 md:max-w-xs z-10">
-              <p className="text-lg font-bold text-[#E86C4F] mb-1">Global Culture</p>
-              <p className="text-[#1d1d1d] text-sm">
-                Collaborate with a remote-first team spread across the globe.
-              </p>
-            </div>
           </div>
         </div>
       </div>

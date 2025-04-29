@@ -134,6 +134,7 @@ const ContactSection = () => {
 
   return (
     <section
+      id="contact-section"
       className="contact-section relative py-20 px-6 md:px-20 text-white bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
