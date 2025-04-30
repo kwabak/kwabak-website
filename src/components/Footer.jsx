@@ -94,7 +94,7 @@ const Footer = () => {
                 PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY BEFORE USING KWABAK WEBSITE.
               </p>
               <p className="mb-4">
-                This website is owned and operated by Kwabak LLC (“Kwabak”), located in Accra, Ghana.
+                This website is owned and operated by Kwabak Technologies Ltd, located in Accra, Ghana.
                 By accessing and using Kwabak’s website in any way — including, without limitation,
                 browsing the website, using any information, using any content, using any services,
                 downloading any materials — you agree to and are bound by these terms. If you do not
@@ -103,7 +103,7 @@ const Footer = () => {
 
               <h3 className="font-semibold mt-4">Copyright</h3>
               <p className="mb-4">
-                All site content is Copyright Kwabak LLC. The names, images, and logos identifying
+                All site content is Copyright for Kwabak Technologies Ltd. The names, images, and logos identifying
                 Kwabak or third parties and their products and services are proprietary marks of
                 Kwabak and/or those third parties. Kwabak has made all reasonable attempts to satisfy
                 the requirements of copyright. Should any copyright issues arise, please contact
