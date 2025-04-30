@@ -1,27 +1,27 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import processImage from "../assets/process.jpg";
+import processImage from "../assets/process2.jpg";
 
 const steps = [
   {
     title: "We Listen",
-    description: "We dive deep into your goals, pain points, and vision to shape impactful strategies.",
+    description: "We start with a deep discovery phase, diving into your business to understand its unique challenges and opportunities. This groundwork is essential for crafting tailored solutions that meet your specific needs.",
   },
   {
     title: "We Plan",
-    description: "Crafting bold and user-centric experiences that connect with your audience.",
+    description: "Next, we move to strategic design, where we outline actionable plans that align with your goals. Our focus is on creating practical, scalable strategies that can drive growth and efficiency.",
   },
   {
     title: "We Execute",
-    description: "Building robust and scalable solutions with modern, flexible technologies.",
+    description: "With the plan in hand, we begin incremental implementation. This means we roll out our solutions step-by-step, allowing for adjustments based on real-time feedback. Whether it's launching a new app or optimizing existing systems, we ensure that each phase is executed smoothly.",
   },
   {
     title: "We Empower",
-    description: "From launch to growth, we ensure success and long-term sustainability.",
+    description: "As we work together, we prioritize knowledge transfer. We empower your team with the skills and insights to manage and sustain the solutions we provide. This collaboration ensures that your organization is equipped for ongoing success.",
   },
   {
     title: "We Optimize",
-    description: "We believe in the power of feedback and iteration to drive success.",
+    description: " Finally, we focus on continuous optimization. We regularly review the performance of our solutions, making necessary adjustments to maximize impact. This commitment to improvement helps ensure that your business not only keeps pace but thrives in a rapidly changing environment.",
   },
 ];
 
@@ -74,14 +74,14 @@ const OurProcess = () => {
 
           <motion.div className="mt-10 space-y-8">
             <AnimatePresence>
-              {steps.map((step, index) => (
+            {steps.map((step, index) => (
                 <motion.div
                   key={index}
                   className="relative pl-14"
-                  variants={itemVariants}
                   initial="hidden"
-                  animate="show"
-                  exit="hidden"
+                  whileInView="show"
+                  viewport={{ once: false, amount: 0.3 }}
+                  variants={itemVariants}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
                   <div className="absolute left-0 top-0 text-2xl font-bold text-[#E86C4F]">
@@ -102,6 +102,7 @@ const OurProcess = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true }}
+          animate={{ scale: 1.05 }}
         >
           <motion.img
             src={processImage}

@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import Logo from "../assets/logo2.png";
+import Logo from "../assets/MainLogo.png";
 
 const Navbar = ({ scrollToSection }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +39,7 @@ const Navbar = ({ scrollToSection }) => {
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           {/* Logo */}
           <div>
-            <img src={Logo} alt="Logo" className="object-cover w-[8rem]" />
+            <img src={Logo} alt="Logo" className="object-cover w-[7rem]" />
           </div>
 
           {/* Centered Nav Links */}
@@ -68,7 +68,7 @@ const Navbar = ({ scrollToSection }) => {
 <div className="hidden md:flex">
   <button
     onClick={() => scrollToSection("Contact")}
-    className="bg-[#E86C4F] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#cf5c42] cursor-pointer transition-all duration-300 flex items-center gap-2"
+    className="bg-[#E86C4F] text-white font-semibold px-6 py-2.5 rounded-full hover:bg-[#cf5c42] cursor-pointer transition-all duration-300 flex items-center gap-2"
   >
     Talk to Us <span className="text-xl">→</span>
   </button>
@@ -113,9 +113,9 @@ const Navbar = ({ scrollToSection }) => {
                   scrollToSection("Contact");
                   setIsOpen(false);
                 }}
-                className="block w-full mt-4 bg-[#E86C4F] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#cf5c42] transition-all duration-300 text-center cursor-pointer"
+                className="w-full mt-4 bg-[#E86C4F] text-white font-semibold px-6 py-2.5 rounded-full hover:bg-[#cf5c42] transition-all duration-300 text-center cursor-pointer flex items-center gap-2 justify-center"
               >
-                Talk to Us
+                Talk to Us <span className="text-xl">→</span>
               </button>
             </motion.div>
           )}

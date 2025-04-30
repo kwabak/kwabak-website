@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaCode, FaMicrochip, FaChartBar, FaPalette, FaHandsHelping } from "react-icons/fa";
 import Modal from "./Modal";
+import { BrainCircuit } from "lucide-react";
+import { BsStars } from "react-icons/bs";
 
 const services = [
   {
@@ -13,7 +15,7 @@ const services = [
   {
     title: "AI Solutions",
     description: "Enterprise-grade AI integration without the complexity. Unlock intelligence across your business ecosystem.",
-    icon: <FaMicrochip className="text-4xl text-[#027A76]" />,
+    icon: <BsStars className="text-4xl text-[#027A76]" />,
     details: "We provide businesses with seamless access to cutting-edge AI technologies and tools, eliminating the need for in-house development. Our scalable AI solutions integrate effortlessly into your existing applications, empowering your organization to harness the power of AI for automation, personalized customer experiences, and advanced decision-making. With our service, you can unlock new efficiencies and insights, driving innovation while focusing on your core business objectives."
   },
   {
@@ -96,3 +98,4 @@ const WhatWeDo = () => {
 };
 
 export default WhatWeDo;
+
