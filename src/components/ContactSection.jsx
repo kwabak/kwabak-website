@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
+import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
+import React, { useEffect, useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import backgroundImage from "../assets/pressure-woman.jpg";
-import ReCAPTCHA from "react-google-recaptcha";
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -165,12 +165,12 @@ const ContactSection = () => {
               together. We’re excited to hear from you!
             </p>
           </div>
-          <button
+          {/* <button
             onClick={handleShareThoughts}
             className="contact-button inline-block mt-6 px-6 py-3 bg-[#E86C4F] hover:bg-[#d8563f] text-white font-medium rounded-full shadow-lg transition duration-300 transform hover:scale-105 cursor-pointer"
           >
             Share Your Thoughts
-          </button>
+          </button> */}
         </div>
 
         {/* Form */}

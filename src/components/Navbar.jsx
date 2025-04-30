@@ -56,7 +56,7 @@ const Navbar = ({ scrollToSection }) => {
           </div>
 
           {/* "Talk to Us" Button at Right */}
-          {/* <div className="hidden md:flex">
+          <div className="hidden md:flex">
             <button
               onClick={() => scrollToSection("Contact")}
               className="bg-[#E86C4F] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#cf5c42] cursor-pointer transition-all duration-300"
