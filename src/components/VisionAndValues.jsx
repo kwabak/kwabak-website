@@ -79,7 +79,7 @@ const VisionAndValues = () => {
             className="absolute inset-0 bg-cover bg-center w-full"
             style={{ backgroundImage: `url(${teamworkImage})` }}
           />
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
 
           <div className="relative z-10 py-16 px-6 md:px-20">
             <div className="space-y-6 max-w-3xl mb-12">
@@ -91,17 +91,28 @@ const VisionAndValues = () => {
               </p>
             </div>
 
-            {/* Core Value Cards */}
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 backdrop-blur-2xl bg-white p-6  shadow-lg">
+            {/* Numbered Core Value Cards */}
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {coreValues.map((text, index) => (
                 <motion.div
                   key={index}
-                  className="border-l-4 border-[#E86C4F] bg-white p-4 shadow-lg hover:scale-105 transition duration-300"
-                  initial={{ opacity: 0, y: 20 }}
+                  className="relative bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-2xl hover:scale-[1.03] transition-all duration-300"
+                  initial={{ opacity: 0, y: 80 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{
+                    delay: index * 0.2, // Staggered delay for each card
+                    duration: 0.8,
+                    ease: "easeOut", // Valid Framer Motion easing
+                  }}
+                  viewport={{ once: true }}
                 >
-                  <p className="text-gray-700 text-sm leading-relaxed">{text}</p>
+                  {/* Number Badge */}
+                  <div className="absolute -top-4 left-4 w-10 h-10 rounded-full bg-[#E86C4F] text-white font-bold flex items-center justify-center shadow-md text-sm">
+                    {index + 1}
+                  </div>
+                  <p className="text-gray-700 text-sm leading-relaxed mt-6">
+                    {text}
+                  </p>
                 </motion.div>
               ))}
             </div>
