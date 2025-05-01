@@ -65,7 +65,7 @@ const MeetTheTeam = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-60 object-cover rounded-xl group-hover:scale-105 transition-transform duration-300 shadow-lg"
+                  className="w-full h-90 md:h-60 object-cover rounded-xl group-hover:scale-105 transition-transform duration-300 shadow-lg"
                 />
               </div>
               <div className="text-center space-y-2">
