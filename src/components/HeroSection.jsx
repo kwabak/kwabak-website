@@ -102,7 +102,6 @@
 // export default HeroSection;
 
 import { motion } from "framer-motion";
-import { FaArrowDown } from "react-icons/fa";
 import GroupImage from "../assets/people-raise-hands.jpg";
 
 const glassCards = [
@@ -151,7 +150,7 @@ const HeroSection = ({ scrollToSection }) => {
                 onClick={() => scrollToSection("Contact")}
                 className="bg-[#E86C4F] text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition duration-300 cursor-pointer"
               >
-                Tell us about your project
+                Tell us about your project <span className="text-xl">→</span>
               </button>
             </div>
           </motion.div>
