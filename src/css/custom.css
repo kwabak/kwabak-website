@@ -12,4 +12,8 @@
   .react-tel-input .form-control {
     transition: border 0.2s ease, box-shadow 0.2s ease;
   }
+
+.country {
+    color: #000;
+}
   
