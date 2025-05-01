@@ -48,7 +48,7 @@ const WhyChooseUs = () => {
   return (
     <section
       ref={ref}
-      className="relative bg-white py-28 px-6 md:px-20 text-[#1d1d1d] overflow-hidden"
+      className="relative bg-white py-16 md:py-28 px-6 md:px-20 text-[#1d1d1d] overflow-hidden"
     >
       {/* Section Title */}
       <div className="text-center">

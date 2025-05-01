@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="">
           <img src={InverseLogo} alt="Kwabak Logo" className="w-40" />
           <div className="flex items-start space-x-2 mt-6">
-            <MapPin size={20} className="text-[#E86C4F]" />
+            <MapPin size={20} className="text-[#fff]" />
             <p>C08 Manyo Close, Adabraka, Accra - Ghana</p>
           </div>
           <div className="flex items-start space-x-2 mt-2">

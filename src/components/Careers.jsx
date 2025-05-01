@@ -4,7 +4,7 @@ import TeamworkImage from "../assets/man-on-phone.jpg"; // Your uploaded image
 const Careers = () => {
 
   return (
-    <section className="relative py-32 px-6 md:px-20 bg-gradient-to-b from-white to-[#E8DAC7] text-[#1d1d1d] overflow-hidden">
+    <section className="relative py-16 md:py-28 px-6 md:px-20 bg-gradient-to-b from-white to-[#E8DAC7] text-[#1d1d1d] overflow-hidden">
    
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center relative z-10">

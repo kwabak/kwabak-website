@@ -41,7 +41,7 @@ const fadeUp = {
 
 const OurProcess = () => {
   return (
-    <section className="bg-[#F8F8F3] py-24 px-6 md:px-20 overflow-hidden">
+    <section className="bg-[#F8F8F3] py-16 md:py-24 px-6 md:px-20 overflow-hidden">
       {/* Header & Paragraph */}
       <div className="flex flex-col items-center text-center w-full mb-20">
         

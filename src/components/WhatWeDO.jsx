@@ -42,7 +42,7 @@ const WhatWeDo = () => {
   const [selectedService, setSelectedService] = useState(null);
 
   return (
-    <section className="relative bg-gradient-to-br from-[#fff] via-[#fff] to-[#F2E5D3] text-[#1d1d1d] py-24 px-6 md:px-20">
+    <section className="relative bg-gradient-to-br from-[#fff] via-[#fff] to-[#F2E5D3] text-[#1d1d1d] py-16 md:py-24 px-6 md:px-20">
       <motion.div
         className="max-w-7xl mx-auto text-center mb-16"
         initial={{ opacity: 0, y: 40 }}
