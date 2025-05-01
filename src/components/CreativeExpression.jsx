@@ -4,7 +4,7 @@ import { PiStarFourFill } from "react-icons/pi";
 
 const CreativeExpression = () => {
   return (
-    <section className="relative bg-gradient-to-br from-[#fefefe] via-[#f9fafb] to-[#fefefe] text-[#1d1d1d] py-28 px-6 md:px-20 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-[#fefefe] via-[#f9fafb] to-[#fefefe] text-[#1d1d1d] md:py-28 px-6 md:px-20 overflow-hidden">
       <style>
         {`
           .shimmer-text {
