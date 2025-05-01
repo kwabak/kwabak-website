@@ -387,7 +387,7 @@ const ContactSection = () => {
 
     const form = e.target;
     const formData = new FormData(form);
-    const formSpreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
+    const formSpreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || "https://formspree.io/f/mqaqkogw"
 
     try {
       const response = await fetch(formSpreeEndpoint, {
