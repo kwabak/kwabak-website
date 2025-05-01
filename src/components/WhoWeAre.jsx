@@ -84,7 +84,7 @@ const WhoWeAre = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Read More
+              Read More  <span className="text-xl">→</span>
             </motion.button>
           </div>
         </motion.div>
