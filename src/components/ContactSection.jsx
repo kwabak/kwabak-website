@@ -529,7 +529,7 @@ const ContactSection = () => {
               <div className="flex gap-4">
                 <input
                   type="text"
-                  name="firstName"
+                  name="First Name"
                   placeholder="First name"
                   className="w-1/2 p-3 rounded-lg border border-[#DBAE8D] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-[#E86C4F]"
                   required
@@ -537,7 +537,7 @@ const ContactSection = () => {
                 />
                 <input
                   type="text"
-                  name="lastName"
+                  name="Last Name"
                   placeholder="Last name"
                   className="w-1/2 p-3 rounded-lg border border-[#DBAE8D] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-[#E86C4F]"
                   required
@@ -546,26 +546,26 @@ const ContactSection = () => {
 
               <input
                 type="email"
-                name="email"
+                name="Email"
                 placeholder="example@gmail.com"
                 className="w-full p-3 rounded-lg border border-[#DBAE8D] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-[#E86C4F]"
                 required
               />
 
-              <input type="hidden" name="phone" value={phone} />
+              <input type="hidden" name="Phone" value={phone} />
               <PhoneInput
                 country={"gh"}
                 value={phone}
                 onChange={setPhone}
                 inputStyle={{
                   width: "100%",
-                  padding: "1.3rem",
+                  padding: "1.5rem",
                   borderRadius: "0.5rem",
                   border: "1px solid #DBAE8D",
                   backgroundColor: "transparent",
                   color: "white",
                   fontSize: "1rem",
-                  paddingLeft: "3rem",
+                  paddingLeft: "3.3rem",
                   fontFamily: "Quicksand, sans-serif",
                 }}
                 buttonStyle={{
@@ -591,7 +591,7 @@ const ContactSection = () => {
 
               <button
                 type="submit"
-                className="w-full bg-[#E86C4F] hover:bg-[#d8563f] text-white py-3 px-6 rounded-full font-medium shadow-lg transition duration-300 transform hover:scale-105"
+                className="w-full bg-[#E86C4F] hover:bg-[#d8563f] text-white py-3 px-6 rounded-full font-medium shadow-lg transition duration-300 transform hover:scale-105 cursor-pointer"
               >
                 Send Message
               </button>
