@@ -518,83 +518,92 @@ const ContactSection = () => {
             </div>
           ) : (
             <form
-              className="w-full max-w-md bg-white/20 backdrop-blur-xl p-8 rounded-xl shadow-lg space-y-6 border border-white/30"
+              className="w-full max-w-md bg-white/20 backdrop-blur-xl rounded-xl shadow-lg border border-white/30 py-8"
               onSubmit={handleSubmit}
             >
               {error && (
-                <div className="text-white bg-red-600 p-3 rounded-lg text-sm">
-                  {error}
+                <div className="px-8 mb-4">
+                  <div className="text-white bg-red-600 p-3 rounded-lg text-sm">
+                    {error}
+                  </div>
                 </div>
               )}
-              <div className="flex gap-4">
+              <div className="px-8 mb-6">
+                <div className="flex gap-4 mb-6">
+                  <input
+                    type="text"
+                    name="First Name"
+                    placeholder="First name"
+                    className="w-1/2 p-3 rounded-lg border border-[#DBAE8D] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-[#E86C4F]"
+                    required
+                    ref={firstNameInputRef}
+                  />
+                  <input
+                    type="text"
+                    name="Last Name"
+                    placeholder="Last name"
+                    className="w-1/2 p-3 rounded-lg border border-[#DBAE8D] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-[#E86C4F]"
+                    required
+                  />
+                </div>
+
                 <input
-                  type="text"
-                  name="First Name"
-                  placeholder="First name"
-                  className="w-1/2 p-3 rounded-lg border border-[#DBAE8D] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-[#E86C4F]"
-                  required
-                  ref={firstNameInputRef}
-                />
-                <input
-                  type="text"
-                  name="Last Name"
-                  placeholder="Last name"
-                  className="w-1/2 p-3 rounded-lg border border-[#DBAE8D] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-[#E86C4F]"
+                  type="email"
+                  name="Email"
+                  placeholder="example@gmail.com"
+                  className="w-full mb-6 p-3 rounded-lg border border-[#DBAE8D] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-[#E86C4F]"
                   required
                 />
+
+                <input type="hidden" name="Phone" value={phone} />
+                <PhoneInput
+                  country={"gh"}
+                  value={phone}
+                  onChange={setPhone}
+                  inputStyle={{
+                    width: "100%",
+                    padding: "1.5rem",
+                    borderRadius: "0.5rem",
+                    border: "1px solid #DBAE8D",
+                    backgroundColor: "transparent",
+                    color: "white",
+                    fontSize: "1rem",
+                    paddingLeft: "3.3rem",
+                    fontFamily: "Quicksand, sans-serif",
+                  }}
+                  buttonStyle={{
+                    backgroundColor: "transparent",
+                    border: "1px solid #DBAE8D",
+                    borderRadius: "0.5rem 0 0 0.5rem",
+                  }}
+                />
+
+                <textarea
+                  name="message"
+                  placeholder="Your message..."
+                  rows={4}
+                  className="w-full mt-6 p-3 rounded-lg border border-[#DBAE8D] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-[#E86C4F]"
+                  required
+                ></textarea>
               </div>
 
-              <input
-                type="email"
-                name="Email"
-                placeholder="example@gmail.com"
-                className="w-full p-3 rounded-lg border border-[#DBAE8D] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-[#E86C4F]"
-                required
-              />
-
-              <input type="hidden" name="Phone" value={phone} />
-              <PhoneInput
-                country={"gh"}
-                value={phone}
-                onChange={setPhone}
-                inputStyle={{
-                  width: "100%",
-                  padding: "1.5rem",
-                  borderRadius: "0.5rem",
-                  border: "1px solid #DBAE8D",
-                  backgroundColor: "transparent",
-                  color: "white",
-                  fontSize: "1rem",
-                  paddingLeft: "3.3rem",
-                  fontFamily: "Quicksand, sans-serif",
-                }}
-                buttonStyle={{
-                  backgroundColor: "transparent",
-                  border: "1px solid #DBAE8D",
-                  borderRadius: "0.5rem 0 0 0.5rem",
-                }}
-              />
-
-              <textarea
-                name="message"
-                placeholder="Your message..."
-                rows={4}
-                className="w-full p-3 rounded-lg border border-[#DBAE8D] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-[#E86C4F]"
-                required
-              ></textarea>
-
-              <ReCAPTCHA
-                sitekey={siteKey}
-                onChange={(value) => setRecaptchaValue(value)}
-                ref={recaptchaRef}
-              />
-
-              <button
-                type="submit"
-                className="w-full bg-[#E86C4F] hover:bg-[#d8563f] text-white py-3 px-6 rounded-full font-medium shadow-lg transition duration-300 transform hover:scale-105 cursor-pointer"
-              >
-                Send Message
-              </button>
+              <div className="w-full flex justify-center mb-6">
+                <ReCAPTCHA
+                  sitekey={siteKey}
+                  onChange={(value) => setRecaptchaValue(value)}
+                  ref={recaptchaRef}
+                  className="w-[304px]"
+                />
+              </div>
+              
+              <div className="px-8">
+                <button
+                  type="submit"
+                  className="w-full bg-[#E86C4F] hover:bg-[#d8563f] text-white py-3 px-6 rounded-full font-medium shadow-lg transition duration-300 transform hover:scale-105 cursor-pointer"
+                >
+                  Send Message
+                </button>
+              </div>
             </form>
           )}
         </div>

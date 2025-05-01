@@ -16,4 +16,12 @@
 .country {
     color: #000;
 }
+
+iframe{
+  width: 100%
+}
+
+#rc-anchor-container, #rc-anchor-alert{
+  width: 100%
+}
   
