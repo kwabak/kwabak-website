@@ -26,3 +26,5 @@ jobs:
           FOLDER: dist
           GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           MESSAGE: "Build: ({sha}) {msg}"
+          VITE_RECAPTCHA_SITE_KEY: ${{ secrets.VITE_RECAPTCHA_SITE_KEY }}
+          VITE_FORMSPREE_ENDPOINT: ${{ secrets.VITE_FORMSPREE_ENDPOINT }}
