@@ -32,7 +32,7 @@ const Navbar = ({ scrollToSection }) => {
         transition={{ type: "spring", stiffness: 100, damping: 15 }}
         className={`top-0 left-0 w-full z-50 ${
           isScrolled
-            ? "fixed backdrop-blur-md bg-red-500/80 shadow-md border-b border-gray-200"
+            ? "fixed backdrop-blur-md bg-white/80 shadow-md border-b border-gray-200"
             : "absolute bg-transparent"
         } h-fit overflow-y-hidden`}
       >
