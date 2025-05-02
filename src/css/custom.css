@@ -12,4 +12,16 @@
   .react-tel-input .form-control {
     transition: border 0.2s ease, box-shadow 0.2s ease;
   }
+
+.country {
+    color: #000;
+}
+
+iframe{
+  width: 100%
+}
+
+#rc-anchor-container, #rc-anchor-alert{
+  width: 100%
+}
   

@@ -148,7 +148,7 @@ const HeroSection = ({ scrollToSection }) => {
             <div>
               <button
                 onClick={() => scrollToSection("Contact")}
-                className="bg-[#E86C4F] text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition duration-300 cursor-pointer"
+                className="bg-[#E86C4F] text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition items-center duration-300 cursor-pointer"
               >
                 Tell us about your project <span className="text-xl">→</span>
               </button>

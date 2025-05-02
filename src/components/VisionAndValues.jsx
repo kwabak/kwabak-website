@@ -97,14 +97,6 @@ const VisionAndValues = () => {
                 <motion.div
                   key={index}
                   className="relative bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-2xl hover:scale-[1.03] transition-all duration-300"
-                  initial={{ opacity: 0, y: 80 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: index * 0.2, // Staggered delay for each card
-                    duration: 0.8,
-                    ease: "easeOut", // Valid Framer Motion easing
-                  }}
-                  viewport={{ once: true }}
                 >
                   {/* Number Badge */}
                   <div className="absolute -top-4 left-4 w-7 h-7 rounded-full bg-[#E86C4F] text-white font-bold flex items-center justify-center shadow-md text-sm">
