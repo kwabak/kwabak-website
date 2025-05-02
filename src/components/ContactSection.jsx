@@ -468,7 +468,7 @@ const ContactSection = () => {
     );
   }, []);
 
-  const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+  const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeLdyMrAAAAAGUAFSa8qwKSUzdZCvY726vkVdLT";
 
   return (
     <section
