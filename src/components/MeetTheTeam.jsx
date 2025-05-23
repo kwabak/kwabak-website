@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import Image1 from "../assets/derick_prev_ui.png";
 import Image2 from "../assets/jason_prev_ui.png";
 import Image3 from "../assets/emma_prev_ui.png";
-import Image4 from "../assets/fred_prev_ui.png";
+// import Image4 from "../assets/fred_prev_ui.png";
+import Image5 from "../assets/nelly_prev_ui.png";
 
 const teamMembers = [
   {
@@ -12,11 +13,11 @@ const teamMembers = [
     title: "Co-Founder & CEO",
     image: Image2,
   },
-  {
-    name: "Frederick Aikins",
-    title: "Co-Founder & COO",
-    image: Image4,
-  },
+  // {
+  //   name: "Frederick Aikins",
+  //   title: "Co-Founder & COO",
+  //   image: Image4,
+  // },
   {
     name: "Kwame Dadzie",
     title: "Software Development Lead",
@@ -27,6 +28,11 @@ const teamMembers = [
     title: "Senior Software Developer",
     image: Image1,
   },
+  {
+    name: "Nelly Quarcoopome",
+    title: "Team & Customer Success Partner",
+    image: Image5,
+  }
 ];
 
 const MeetTheTeam = () => {
