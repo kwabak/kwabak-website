@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image1 from "../assets/derick_prev_ui.png";
 import Image2 from "../assets/jason_prev_ui.png";
 import Image3 from "../assets/emma_prev_ui.png";
-// import Image4 from "../assets/fred_prev_ui.png";
+import Image4 from "../assets/fred_prev_ui.png";
 import Image5 from "../assets/nelly_prev_ui.png";
 
 const teamMembers = [
@@ -13,11 +13,11 @@ const teamMembers = [
     title: "Co-Founder & CEO",
     image: Image2,
   },
-  // {
-  //   name: "Frederick Aikins",
-  //   title: "Co-Founder & COO",
-  //   image: Image4,
-  // },
+  {
+    name: "Frederick Aikins",
+    title: "Co-Founder & COO",
+    image: Image4,
+  },
   {
     name: "Kwame Dadzie",
     title: "Software Development Lead",
@@ -47,7 +47,7 @@ const MeetTheTeam = () => {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 relative z-10 max-w-4xl mx-auto">
         {teamMembers.map((member, index) => (
           <motion.div
             key={index}
@@ -66,12 +66,12 @@ const MeetTheTeam = () => {
               className="bg-white shadow-xl p-6 rounded-2xl transition-transform transform hover:scale-105"
             >
               <div
-                className="overflow-hidden rounded-xl mb-4 bg-gray-200" // Uniform background color
+                className="overflow-hidden rounded-xl mb-4 bg-gray-200"
               >
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-90 md:h-60 object-cover rounded-xl group-hover:scale-105 transition-transform duration-300 shadow-lg"
+                  className="w-full h-[25rem] md:h-60 object-cover rounded-xl group-hover:scale-105 transition-transform duration-300 shadow-lg"
                 />
               </div>
               <div className="text-center space-y-2">
